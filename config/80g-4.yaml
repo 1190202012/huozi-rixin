@@ -1,0 +1,243 @@
+# Project
+mode: demo
+
+seed: 42
+
+# Dataset or file
+data: 
+test_file: 
+
+# Cache dir. Cache will be load from: cache_dir + load_{result, info}_file if set.
+cache_dir: 
+
+# Output dir. Output will be saved into "output_dir/%Y_%m_%d_%H_%M_%S" if set.
+output_dir: 
+
+result_file: 
+result_info_file: 
+
+# 80g gpu id
+gpu: 0, 1, 2, 3
+
+ddp: False
+
+# LLM Config
+LLMConfig:
+  llm1:
+    model_name: llama2_base_reward_model
+    model_path: ./data/model/llama2_base_reward_model/pytorch_model.bin
+    model_class: LlamaModel
+    fp16: True
+    tokenizer_class: LlamaTokenizer
+  llm2:
+    model_name: llama2-chat
+    model_path: daryl149/llama-2-7b-chat-hf
+    model_class: LlamaForCausalLM
+    fp16: True
+    tokenizer_class: LlamaTokenizer
+  llm3:
+    model_name: xverse-chat
+    model_path: xverse/XVERSE-13B-Chat
+    model_class: AutoModelForCausalLM
+    fp16: True
+    tokenizer_class: AutoTokenizer
+  llm4:
+    model_name: xverse_base_reward_model
+    model_path: ./data/model/xverse_base_reward_model/pytorch_model.bin
+    model_class: LlamaModel
+    fp16: True
+    tokenizer_class: AutoTokenizer
+  llm5:
+    model_name: en_query_encoder
+    model_path: ./data/model/webglm_dual_encoder/query_encoder
+    model_class: AutoModel
+    fp16: False
+    tokenizer_path: facebook/contriever-msmarco
+    tokenizer_class: AutoTokenizer
+  llm6:
+    model_name: en_paragraph_encoder
+    model_path: ./data/model/webglm_dual_encoder/paragraph_encoder
+    model_class: AutoModel
+    fp16: False
+    tokenizer_path: facebook/contriever-msmarco
+    tokenizer_class: AutoTokenizer
+  llm7:
+    model_name: chatglm2
+    model_path: THUDM/chatglm2-6b
+    model_class: AutoModel
+    fp16: True
+    tokenizer_class: AutoTokenizer
+  llm8:
+    model_name: bert-base-chinese
+    model_path: bert-base-chinese
+    model_class: BertModel
+    fp16: False
+    tokenizer_class: AutoTokenizer
+  llm9:
+    model_name: deberta
+    model_path: microsoft/deberta-xlarge-mnli
+    model_class: AutoModel
+    fp16: False
+    tokenizer_class: AutoTokenizer
+  llm10:
+    model_name: zh_encoder
+    model_path: BAAI/bge-large-zh
+    model_class: AutoModel
+    fp16: False
+    tokenizer_class: AutoTokenizer
+
+# Map llm with gpu device and process
+LLMMap: 
+  gpu0: llama2-chat, chatglm2, bert-base-chinese, deberta
+  gpu1: llama2-chat, chatglm2, xverse_base_reward_model
+  gpu2: llama2-chat, chatglm2, llama2_base_reward_model
+  gpu3: llama2-chat, chatglm2, en_query_encoder, en_paragraph_encoder, zh_encoder
+
+# Modules
+Module:
+  Retrieval: Wiki, Web, Gendoc
+  Knowledge: Summarizer, Contriver
+  Response: Generator
+  Evaluate: Voter, Scorer
+
+# Method config
+ModuleConfig:
+  Web:
+    ban: False
+    load_result_file: 
+    save_result_file:
+    load_info_file: 
+    save_info_file: 
+    log_detail: True
+    ssl_verify: False
+    min_doc_len: 50
+    max_doc_len: 1000
+
+
+  Wiki:
+    ban: False
+    load_result_file: 
+    save_result_file:
+    load_info_file: 
+    save_info_file: 
+    log_detail: False
+    tokenize_kwargs:
+      padding: "longest"
+      truncation: True
+      max_length: 128
+    encode_kwargs:
+      batch_size: 1
+      pooling_method: cls
+
+
+  Gendoc:
+    ban: False
+    load_result_file: 
+    save_result_file:
+    load_info_file: 
+    save_info_file: 
+    log_detail: False
+    zh_model_name: chatglm2
+    zh_template_id: 1
+    en_model_name: llama2-chat
+    en_template_id: 1
+    tokenize_kwargs:
+      padding: False
+      truncation: True
+    generate_kwargs:
+      batch_size: 1
+      temperature: 0.4
+      top_p: 0.9
+      top_k: 50
+      repetition_penalty: 1.1
+      do_sample: True
+
+
+  Summarizer:
+    ban: False
+    load_result_file: 
+    save_result_file:
+    load_info_file: 
+    save_info_file: 
+    zh_model_name: chatglm2
+    zh_template_id: 4
+    en_model_name: llama2-chat
+    en_template_id: 4
+    tokenize_kwargs:
+      padding: "longest"
+      truncation: True
+    generate_kwargs:
+      batch_size: 2
+      temperature: 0.4
+      top_p: 0.9
+      top_k: 50
+      repetition_penalty: 1.1
+      do_sample: False
+
+
+  Contriver:
+    ban: False
+    load_result_file: 
+    save_result_file:
+    load_info_file: 
+    save_info_file: 
+    min_knowledge_len: 300
+    tokenize_kwargs:
+      padding: "longest"
+      truncation: True
+      max_length: 512
+    encode_kwargs:
+      batch_size: 1
+      pooling_method: mean
+
+  Generator:
+    ban: False
+    load_result_file: 
+    save_result_file:
+    load_info_file: 
+    save_info_file: 
+    zh_model_name: chatglm2
+    zh_template_id: 4
+    en_model_name: llama2-chat
+    en_template_id: 13
+    tokenize_kwargs:
+      padding: "longest"
+      truncation: True
+    generate_kwargs:
+      batch_size: 1
+      temperature: 0.4
+      top_p: 0.9
+      top_k: 50
+      repetition_penalty: 1.2
+      do_sample: True
+      max_new_tokens: 300
+
+
+  Voter:
+    ban: False
+    load_result_file: 
+    save_result_file:
+    load_info_file: 
+    save_info_file: 
+    tokenize_kwargs: 
+      padding: "longest"
+      truncation: False
+    encode_kwargs:
+      batch_size: 4
+
+  Scorer:
+    ban: False
+    load_result_file:
+    save_result_file: 
+    load_info_file:
+    save_info_file: 
+    zh_model_name: xverse_base_reward_model
+    zh_template_id: 1
+    en_model_name: llama2_base_reward_model
+    en_template_id: 1
+    tokenize_kwargs: 
+      padding: "longest"
+      truncation: True
+      max_length: 1024
+    reward_kwargs:
+      batch_size: 2

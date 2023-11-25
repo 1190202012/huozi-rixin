@@ -1,0 +1,1733 @@
+[2023-10-08 20:55:12,438] [INFO] [real_accelerator.py:133:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-10-08 20:55:30,886] [WARNING] [runner.py:196:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+Detected CUDA_VISIBLE_DEVICES=0,1,2,3,4,5 but ignoring it because one or several of --include/--exclude/--num_gpus/--num_nodes cl args were used. If you want to use CUDA_VISIBLE_DEVICES don't pass any of these arguments to deepspeed.
+[2023-10-08 20:55:30,887] [INFO] [runner.py:555:main] cmd = /home/yfchen/miniconda3/envs/aaai24/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMCwgMSwgMiwgMywgNCwgNV19 --master_addr=127.0.0.1 --master_port=14654 --enable_each_rank_log=None main.py --data_output_path /home/yfchen/tmp/data_files --data_path en_reward_model_dataset --data_split 0,10,0 --model_name_or_path daryl149/llama-2-7b-chat-hf --per_device_train_batch_size 6 --per_device_eval_batch_size 8 --max_seq_len 1024 --learning_rate 9.65e-6 --weight_decay 0.1 --num_padding_at_beginning 0 --num_train_epochs 3 --gradient_accumulation_steps 4 --lr_scheduler_type cosine --num_warmup_steps 40 --seed 1234 --gradient_checkpointing --zero_stage 3 --deepspeed --output_dir ./log/llama2_7b_chat/2023-10-08_20:54:47
+[2023-10-08 20:55:32,498] [INFO] [real_accelerator.py:133:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-10-08 20:55:33,547] [INFO] [launch.py:145:main] WORLD INFO DICT: {'localhost': [0, 1, 2, 3, 4, 5]}
+[2023-10-08 20:55:33,547] [INFO] [launch.py:151:main] nnodes=1, num_local_procs=6, node_rank=0
+[2023-10-08 20:55:33,547] [INFO] [launch.py:162:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0, 1, 2, 3, 4, 5]})
+[2023-10-08 20:55:33,547] [INFO] [launch.py:163:main] dist_world_size=6
+[2023-10-08 20:55:33,547] [INFO] [launch.py:165:main] Setting CUDA_VISIBLE_DEVICES=0,1,2,3,4,5
+[2023-10-08 20:55:35,752] [INFO] [real_accelerator.py:133:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-10-08 20:55:35,752] [INFO] [real_accelerator.py:133:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-10-08 20:55:35,752] [INFO] [real_accelerator.py:133:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-10-08 20:55:35,850] [INFO] [real_accelerator.py:133:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-10-08 20:55:35,850] [INFO] [real_accelerator.py:133:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-10-08 20:55:35,952] [INFO] [real_accelerator.py:133:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-10-08 20:55:40,592] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+[2023-10-08 20:55:40,592] [INFO] [comm.py:616:init_distributed] cdb=None
+[2023-10-08 20:55:40,592] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+[2023-10-08 20:55:40,592] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+[2023-10-08 20:55:40,592] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+[2023-10-08 20:55:40,592] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+[2023-10-08 20:55:40,593] [INFO] [comm.py:616:init_distributed] cdb=None
+[2023-10-08 20:55:40,592] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+[2023-10-08 20:55:40,593] [INFO] [comm.py:616:init_distributed] cdb=None
+[2023-10-08 20:55:40,593] [INFO] [comm.py:616:init_distributed] cdb=None
+[2023-10-08 20:55:40,593] [INFO] [comm.py:616:init_distributed] cdb=None
+[2023-10-08 20:55:40,593] [INFO] [comm.py:616:init_distributed] cdb=None
+[2023-10-08 20:55:40,593] [INFO] [comm.py:643:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+Using pad_token, but it is not set yet.
+Using pad_token, but it is not set yet.
+Using pad_token, but it is not set yet.
+Using pad_token, but it is not set yet.
+Using pad_token, but it is not set yet.
+Using pad_token, but it is not set yet.
+[2023-10-08 20:56:41,200] [INFO] [partition_parameters.py:326:__exit__] finished initializing model with 6.61B parameters
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:20<00:20, 20.49s/it]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:20<00:20, 20.49s/it]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:20<00:20, 20.49s/it]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:20<00:20, 20.50s/it]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:20<00:20, 20.55s/it]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:24<00:24, 24.66s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:27<00:00, 12.75s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:27<00:00, 13.92s/it]
+Some weights of the model checkpoint at daryl149/llama-2-7b-chat-hf were not used when initializing LlamaModel: ['lm_head.weight']
+- This IS expected if you are initializing LlamaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing LlamaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:27<00:00, 12.77s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:27<00:00, 13.93s/it]
+Some weights of the model checkpoint at daryl149/llama-2-7b-chat-hf were not used when initializing LlamaModel: ['lm_head.weight']
+- This IS expected if you are initializing LlamaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing LlamaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:27<00:00, 12.77s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:27<00:00, 13.93s/it]
+Some weights of the model checkpoint at daryl149/llama-2-7b-chat-hf were not used when initializing LlamaModel: ['lm_head.weight']
+- This IS expected if you are initializing LlamaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing LlamaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:27<00:00, 12.78s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:27<00:00, 13.94s/it]
+Some weights of the model checkpoint at daryl149/llama-2-7b-chat-hf were not used when initializing LlamaModel: ['lm_head.weight']
+- This IS expected if you are initializing LlamaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing LlamaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:27<00:00, 12.78s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:27<00:00, 13.94s/it]
+Some weights of the model checkpoint at daryl149/llama-2-7b-chat-hf were not used when initializing LlamaModel: ['lm_head.weight']
+- This IS expected if you are initializing LlamaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing LlamaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:31<00:00, 14.46s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:31<00:00, 15.99s/it]
+Some weights of the model checkpoint at daryl149/llama-2-7b-chat-hf were not used when initializing LlamaModel: ['lm_head.weight']
+- This IS expected if you are initializing LlamaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing LlamaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+> Creating model from_config took 61.54413938522339 seconds
+Installed CUDA version 11.7 does not match the version torch was compiled with 11.1 but since the APIs are compatible, accepting this combinationInstalled CUDA version 11.7 does not match the version torch was compiled with 11.1 but since the APIs are compatible, accepting this combination
+
+Installed CUDA version 11.7 does not match the version torch was compiled with 11.1 but since the APIs are compatible, accepting this combinationInstalled CUDA version 11.7 does not match the version torch was compiled with 11.1 but since the APIs are compatible, accepting this combination
+
+Installed CUDA version 11.7 does not match the version torch was compiled with 11.1 but since the APIs are compatible, accepting this combinationInstalled CUDA version 11.7 does not match the version torch was compiled with 11.1 but since the APIs are compatible, accepting this combination
+
+Using /home/yfchen/.cache/torch_extensions/py39_cu111 as PyTorch extensions root...Using /home/yfchen/.cache/torch_extensions/py39_cu111 as PyTorch extensions root...Using /home/yfchen/.cache/torch_extensions/py39_cu111 as PyTorch extensions root...Using /home/yfchen/.cache/torch_extensions/py39_cu111 as PyTorch extensions root...
+Using /home/yfchen/.cache/torch_extensions/py39_cu111 as PyTorch extensions root...Using /home/yfchen/.cache/torch_extensions/py39_cu111 as PyTorch extensions root...
+
+
+
+
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home/yfchen/.cache/torch_extensions/py39_cu111/fused_adam/build.ninja...
+Building extension module fused_adam...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+1.10.1
+Loading extension module fused_adam...
+Time to load fused_adam op: 0.9542129039764404 seconds
+Loading extension module fused_adam...Loading extension module fused_adam...Loading extension module fused_adam...
+Loading extension module fused_adam...Loading extension module fused_adam...
+
+
+
+Time to load fused_adam op: 0.9929599761962891 seconds
+Time to load fused_adam op: 0.993107795715332 seconds
+Time to load fused_adam op: 0.9931516647338867 seconds
+Time to load fused_adam op: 0.9937958717346191 secondsTime to load fused_adam op: 0.9937942028045654 seconds
+
+[2023-10-08 20:57:23,009] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed info: version=0.10.0, git-hash=unknown, git-branch=unknown
+[2023-10-08 20:57:23,009] [INFO] [comm.py:637:init_distributed] Distributed backend already initialized
+[2023-10-08 20:57:24,044] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+[2023-10-08 20:57:24,046] [INFO] [logging.py:96:log_dist] [Rank 0] Removing param_group that has no 'params' in the client Optimizer
+[2023-10-08 20:57:24,046] [INFO] [logging.py:96:log_dist] [Rank 0] Using client Optimizer as basic optimizer
+[2023-10-08 20:57:24,063] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Basic Optimizer = FusedAdam
+[2023-10-08 20:57:24,063] [INFO] [utils.py:54:is_zero_supported_optimizer] Checking ZeRO support for optimizer=FusedAdam type=<class 'deepspeed.ops.adam.fused_adam.FusedAdam'>
+[2023-10-08 20:57:24,063] [INFO] [logging.py:96:log_dist] [Rank 0] Creating fp16 ZeRO stage 3 optimizer, MiCS is enabled False, Hierarchical params gather False
+[2023-10-08 20:57:24,063] [INFO] [logging.py:96:log_dist] [Rank 0] Creating torch.float32 ZeRO stage 3 optimizer
+[2023-10-08 20:57:24,290] [INFO] [utils.py:785:see_memory_usage] Stage 3 initialize beginning
+[2023-10-08 20:57:24,290] [INFO] [utils.py:786:see_memory_usage] MA 4.65 GB         Max_MA 5.63 GB         CA 7.15 GB         Max_CA 7 GB 
+[2023-10-08 20:57:24,291] [INFO] [utils.py:793:see_memory_usage] CPU Virtual Memory:  used = 42.9 GB, percent = 5.7%
+[2023-10-08 20:57:24,293] [INFO] [stage3.py:117:__init__] Reduce bucket size 500,000,000
+[2023-10-08 20:57:24,293] [INFO] [stage3.py:118:__init__] Prefetch bucket size 30000000
+[2023-10-08 20:57:24,476] [INFO] [utils.py:785:see_memory_usage] DeepSpeedZeRoOffload initialize [begin]
+[2023-10-08 20:57:24,477] [INFO] [utils.py:786:see_memory_usage] MA 4.65 GB         Max_MA 4.65 GB         CA 7.15 GB         Max_CA 7 GB 
+[2023-10-08 20:57:24,477] [INFO] [utils.py:793:see_memory_usage] CPU Virtual Memory:  used = 42.9 GB, percent = 5.7%
+Parameter Offload: Total persistent parameters: 270336 in 66 params
+[2023-10-08 20:57:24,680] [INFO] [utils.py:785:see_memory_usage] DeepSpeedZeRoOffload initialize [end]
+[2023-10-08 20:57:24,681] [INFO] [utils.py:786:see_memory_usage] MA 4.25 GB         Max_MA 4.74 GB         CA 7.15 GB         Max_CA 7 GB 
+[2023-10-08 20:57:24,681] [INFO] [utils.py:793:see_memory_usage] CPU Virtual Memory:  used = 42.9 GB, percent = 5.7%
+[2023-10-08 20:57:24,868] [INFO] [utils.py:785:see_memory_usage] Before creating fp16 partitions
+[2023-10-08 20:57:24,868] [INFO] [utils.py:786:see_memory_usage] MA 4.25 GB         Max_MA 4.25 GB         CA 7.15 GB         Max_CA 7 GB 
+[2023-10-08 20:57:24,868] [INFO] [utils.py:793:see_memory_usage] CPU Virtual Memory:  used = 42.9 GB, percent = 5.7%
+[2023-10-08 20:57:30,504] [INFO] [utils.py:785:see_memory_usage] After creating fp16 partitions: 2
+[2023-10-08 20:57:30,505] [INFO] [utils.py:786:see_memory_usage] MA 4.25 GB         Max_MA 4.25 GB         CA 4.25 GB         Max_CA 7 GB 
+[2023-10-08 20:57:30,506] [INFO] [utils.py:793:see_memory_usage] CPU Virtual Memory:  used = 63.42 GB, percent = 8.4%
+[2023-10-08 20:57:30,850] [INFO] [utils.py:785:see_memory_usage] Before creating fp32 partitions
+[2023-10-08 20:57:30,850] [INFO] [utils.py:786:see_memory_usage] MA 4.25 GB         Max_MA 4.25 GB         CA 4.25 GB         Max_CA 4 GB 
+[2023-10-08 20:57:30,850] [INFO] [utils.py:793:see_memory_usage] CPU Virtual Memory:  used = 50.87 GB, percent = 6.7%
+[2023-10-08 20:57:31,104] [INFO] [utils.py:785:see_memory_usage] After creating fp32 partitions
+[2023-10-08 20:57:31,104] [INFO] [utils.py:786:see_memory_usage] MA 8.35 GB         Max_MA 8.35 GB         CA 8.36 GB         Max_CA 8 GB 
+[2023-10-08 20:57:31,105] [INFO] [utils.py:793:see_memory_usage] CPU Virtual Memory:  used = 42.87 GB, percent = 5.7%
+[2023-10-08 20:57:31,293] [INFO] [utils.py:785:see_memory_usage] Before initializing optimizer states
+[2023-10-08 20:57:31,293] [INFO] [utils.py:786:see_memory_usage] MA 8.35 GB         Max_MA 8.35 GB         CA 8.36 GB         Max_CA 8 GB 
+[2023-10-08 20:57:31,294] [INFO] [utils.py:793:see_memory_usage] CPU Virtual Memory:  used = 42.87 GB, percent = 5.7%
+[2023-10-08 20:57:31,496] [INFO] [utils.py:785:see_memory_usage] After initializing optimizer states
+[2023-10-08 20:57:31,497] [INFO] [utils.py:786:see_memory_usage] MA 16.55 GB         Max_MA 20.28 GB         CA 20.29 GB         Max_CA 20 GB 
+[2023-10-08 20:57:31,498] [INFO] [utils.py:793:see_memory_usage] CPU Virtual Memory:  used = 42.87 GB, percent = 5.7%
+[2023-10-08 20:57:31,498] [INFO] [stage3.py:424:_setup_for_real_optimizer] optimizer state initialized
+[2023-10-08 20:57:36,942] [INFO] [utils.py:785:see_memory_usage] After initializing ZeRO optimizer
+[2023-10-08 20:57:36,943] [INFO] [utils.py:786:see_memory_usage] MA 22.52 GB         Max_MA 23.5 GB         CA 37.85 GB         Max_CA 38 GB 
+[2023-10-08 20:57:36,943] [INFO] [utils.py:793:see_memory_usage] CPU Virtual Memory:  used = 42.87 GB, percent = 5.7%
+[2023-10-08 20:57:36,943] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Final Optimizer = FusedAdam
+[2023-10-08 20:57:36,944] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed using client LR scheduler
+[2023-10-08 20:57:36,944] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed LR Scheduler = <torch.optim.lr_scheduler.LambdaLR object at 0x7f9e39baf940>
+[2023-10-08 20:57:36,944] [INFO] [logging.py:96:log_dist] [Rank 0] step=0, skipped=0, lr=[0.0], mom=[(0.9, 0.95)]
+[2023-10-08 20:57:36,945] [INFO] [config.py:960:print] DeepSpeedEngine configuration:
+[2023-10-08 20:57:36,946] [INFO] [config.py:964:print]   activation_checkpointing_config  {
+    "partition_activations": false, 
+    "contiguous_memory_optimization": false, 
+    "cpu_checkpointing": false, 
+    "number_checkpoints": null, 
+    "synchronize_checkpoint_boundary": false, 
+    "profile": false
+}
+[2023-10-08 20:57:36,946] [INFO] [config.py:964:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'thread_count': 1, 'single_submit': False, 'overlap_events': True}
+[2023-10-08 20:57:36,946] [INFO] [config.py:964:print]   amp_enabled .................. False
+[2023-10-08 20:57:36,946] [INFO] [config.py:964:print]   amp_params ................... False
+[2023-10-08 20:57:36,946] [INFO] [config.py:964:print]   autotuning_config ............ {
+    "enabled": false, 
+    "start_step": null, 
+    "end_step": null, 
+    "metric_path": null, 
+    "arg_mappings": null, 
+    "metric": "throughput", 
+    "model_info": null, 
+    "results_dir": "autotuning_results", 
+    "exps_dir": "autotuning_exps", 
+    "overwrite": true, 
+    "fast": true, 
+    "start_profile_step": 3, 
+    "end_profile_step": 5, 
+    "tuner_type": "gridsearch", 
+    "tuner_early_stopping": 5, 
+    "tuner_num_trials": 50, 
+    "model_info_path": null, 
+    "mp_size": 1, 
+    "max_train_batch_size": null, 
+    "min_train_batch_size": 1, 
+    "max_train_micro_batch_size_per_gpu": 1.024000e+03, 
+    "min_train_micro_batch_size_per_gpu": 1, 
+    "num_tuning_micro_batch_sizes": 3
+}
+[2023-10-08 20:57:36,946] [INFO] [config.py:964:print]   bfloat16_enabled ............. False
+[2023-10-08 20:57:36,946] [INFO] [config.py:964:print]   checkpoint_parallel_write_pipeline  False
+[2023-10-08 20:57:36,946] [INFO] [config.py:964:print]   checkpoint_tag_validation_enabled  True
+[2023-10-08 20:57:36,946] [INFO] [config.py:964:print]   checkpoint_tag_validation_fail  False
+[2023-10-08 20:57:36,946] [INFO] [config.py:964:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x7f9e3a869340>
+[2023-10-08 20:57:36,946] [INFO] [config.py:964:print]   communication_data_type ...... None
+[2023-10-08 20:57:36,946] [INFO] [config.py:964:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+[2023-10-08 20:57:36,947] [INFO] [config.py:964:print]   curriculum_enabled_legacy .... False
+[2023-10-08 20:57:36,947] [INFO] [config.py:964:print]   curriculum_params_legacy ..... False
+[2023-10-08 20:57:36,947] [INFO] [config.py:964:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'curriculum_learning': {'enabled': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+[2023-10-08 20:57:36,947] [INFO] [config.py:964:print]   data_efficiency_enabled ...... False
+[2023-10-08 20:57:36,947] [INFO] [config.py:964:print]   dataloader_drop_last ......... False
+[2023-10-08 20:57:36,947] [INFO] [config.py:964:print]   disable_allgather ............ False
+[2023-10-08 20:57:36,947] [INFO] [config.py:964:print]   dump_state ................... False
+[2023-10-08 20:57:36,947] [INFO] [config.py:964:print]   dynamic_loss_scale_args ...... None
+[2023-10-08 20:57:36,947] [INFO] [config.py:964:print]   eigenvalue_enabled ........... False
+[2023-10-08 20:57:36,947] [INFO] [config.py:964:print]   eigenvalue_gas_boundary_resolution  1
+[2023-10-08 20:57:36,947] [INFO] [config.py:964:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[2023-10-08 20:57:36,947] [INFO] [config.py:964:print]   eigenvalue_layer_num ......... 0
+[2023-10-08 20:57:36,947] [INFO] [config.py:964:print]   eigenvalue_max_iter .......... 100
+[2023-10-08 20:57:36,947] [INFO] [config.py:964:print]   eigenvalue_stability ......... 1e-06
+[2023-10-08 20:57:36,947] [INFO] [config.py:964:print]   eigenvalue_tol ............... 0.01
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   eigenvalue_verbose ........... False
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   elasticity_enabled ........... False
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   flops_profiler_config ........ {
+    "enabled": false, 
+    "recompute_fwd_factor": 0.0, 
+    "profile_step": 1, 
+    "module_depth": -1, 
+    "top_modules": 1, 
+    "detailed": true, 
+    "output_file": null
+}
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   fp16_auto_cast ............... None
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   fp16_enabled ................. False
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   fp16_master_weights_and_gradients  False
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   global_rank .................. 0
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   grad_accum_dtype ............. None
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   gradient_accumulation_steps .. 4
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   gradient_clipping ............ 1.0
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   gradient_predivide_factor .... 1.0
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   initial_dynamic_scale ........ 65536
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   load_universal_checkpoint .... False
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   loss_scale ................... 0
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   memory_breakdown ............. False
+[2023-10-08 20:57:36,948] [INFO] [config.py:964:print]   mics_hierarchial_params_gather  False
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   mics_shard_size .............. -1
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='step2_tensorboard/ds_tensorboard_logs/', job_name='step2_model_tensorboard') wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') enabled=False
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   nebula_config ................ {
+    "enabled": false, 
+    "persistent_storage_path": null, 
+    "persistent_time_interval": 100, 
+    "num_of_version_in_retention": 2, 
+    "enable_nebula_load": true, 
+    "load_path": null
+}
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   optimizer_legacy_fusion ...... False
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   optimizer_name ............... None
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   optimizer_params ............. None
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0}
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   pld_enabled .................. False
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   pld_params ................... False
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   prescale_gradients ........... False
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   scheduler_name ............... None
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   scheduler_params ............. None
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   sparse_attention ............. None
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   sparse_gradients_enabled ..... False
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   steps_per_print .............. 10
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   train_batch_size ............. 144
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   train_micro_batch_size_per_gpu  6
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   use_node_local_storage ....... False
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   wall_clock_breakdown ......... False
+[2023-10-08 20:57:36,949] [INFO] [config.py:964:print]   world_size ................... 6
+[2023-10-08 20:57:36,950] [INFO] [config.py:964:print]   zero_allow_untested_optimizer  False
+[2023-10-08 20:57:36,950] [INFO] [config.py:964:print]   zero_config .................. stage=3 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500,000,000 allgather_partitions=True allgather_bucket_size=500,000,000 overlap_comm=True load_from_fp32_weights=True elastic_checkpoint=False offload_param=DeepSpeedZeroOffloadParamConfig(device='none', nvme_path=None, buffer_count=5, buffer_size=100,000,000, max_in_cpu=1,000,000,000, pin_memory=False) offload_optimizer=DeepSpeedZeroOffloadOptimizerConfig(device='none', nvme_path=None, buffer_count=4, pin_memory=False, pipeline=False, pipeline_read=False, pipeline_write=False, fast_init=False) sub_group_size=1,000,000,000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=30000000 param_persistence_threshold=10000 model_persistence_threshold=sys.maxsize max_live_parameters=30000000 max_reuse_distance=1,000,000,000 gather_16bit_weights_on_model_save=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_gradients=False mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=False
+[2023-10-08 20:57:36,950] [INFO] [config.py:964:print]   zero_enabled ................. True
+[2023-10-08 20:57:36,950] [INFO] [config.py:964:print]   zero_force_ds_cpu_optimizer .. True
+[2023-10-08 20:57:36,950] [INFO] [config.py:964:print]   zero_optimization_stage ...... 3
+[2023-10-08 20:57:36,950] [INFO] [config.py:950:print_user_config]   json = {
+    "train_batch_size": 144, 
+    "train_micro_batch_size_per_gpu": 6, 
+    "steps_per_print": 10, 
+    "zero_optimization": {
+        "stage": 3, 
+        "offload_param": {
+            "device": "none"
+        }, 
+        "offload_optimizer": {
+            "device": "none"
+        }, 
+        "stage3_param_persistence_threshold": 1.000000e+04, 
+        "stage3_max_live_parameters": 3.000000e+07, 
+        "stage3_prefetch_bucket_size": 3.000000e+07, 
+        "memory_efficient_linear": false
+    }, 
+    "fp16": {
+        "enabled": false, 
+        "loss_scale_window": 100
+    }, 
+    "gradient_clipping": 1.0, 
+    "prescale_gradients": false, 
+    "wall_clock_breakdown": false, 
+    "hybrid_engine": {
+        "enabled": false, 
+        "max_out_tokens": 512, 
+        "inference_tp_size": 1, 
+        "release_inference_cache": false, 
+        "pin_parameters": true, 
+        "tp_gather_partition_size": 8
+    }, 
+    "tensorboard": {
+        "enabled": false, 
+        "output_path": "step2_tensorboard/ds_tensorboard_logs/", 
+        "job_name": "step2_model_tensorboard"
+    }
+}
+***** Running training *****
+***** Evaluating reward, Epoch 0/3 *****
+chosen_last_scores (higher is better) : 0.09862466156482697, acc (higher is better) : 0.34128336172629187
+Beginning of Epoch 1/3, Total Micro Batches 440
+epoch: 0, step: 0, loss: 0.7205147743225098
+epoch: 0, step: 1, loss: 0.6849634051322937
+epoch: 0, step: 2, loss: 0.7126369476318359
+epoch: 0, step: 3, loss: 0.6847470998764038
+epoch: 0, step: 4, loss: 0.6847143173217773
+epoch: 0, step: 5, loss: 0.6842024326324463
+epoch: 0, step: 6, loss: 0.644277036190033
+epoch: 0, step: 7, loss: 0.7030676603317261
+epoch: 0, step: 8, loss: 0.7075875997543335
+epoch: 0, step: 9, loss: 0.7110207080841064
+epoch: 0, step: 10, loss: 0.6949572563171387
+epoch: 0, step: 11, loss: 0.7041813731193542
+epoch: 0, step: 12, loss: 0.6728193759918213
+epoch: 0, step: 13, loss: 0.7536894083023071
+epoch: 0, step: 14, loss: 0.6674870252609253
+epoch: 0, step: 15, loss: 0.6595615744590759
+epoch: 0, step: 16, loss: 0.7075225114822388
+epoch: 0, step: 17, loss: 0.6897320747375488
+epoch: 0, step: 18, loss: 0.6992475390434265
+epoch: 0, step: 19, loss: 0.6646257638931274
+epoch: 0, step: 20, loss: 0.6064783334732056
+epoch: 0, step: 21, loss: 0.7225746512413025
+epoch: 0, step: 22, loss: 0.6632682085037231
+epoch: 0, step: 23, loss: 0.6557296514511108
+epoch: 0, step: 24, loss: 0.7671235799789429
+epoch: 0, step: 25, loss: 0.6266933083534241
+epoch: 0, step: 26, loss: 0.5842939615249634
+epoch: 0, step: 27, loss: 0.7729148864746094
+epoch: 0, step: 28, loss: 0.6334518790245056
+epoch: 0, step: 29, loss: 0.6867274045944214
+epoch: 0, step: 30, loss: 0.3830282688140869
+epoch: 0, step: 31, loss: 0.8228921890258789
+epoch: 0, step: 32, loss: 0.7339808344841003
+epoch: 0, step: 33, loss: 0.7818772792816162
+epoch: 0, step: 34, loss: 0.6570359468460083
+epoch: 0, step: 35, loss: 0.9010199904441833
+epoch: 0, step: 36, loss: 0.7815496921539307
+epoch: 0, step: 37, loss: 0.699932336807251
+epoch: 0, step: 38, loss: 0.6824359893798828
+[2023-10-08 21:45:38,356] [INFO] [logging.py:96:log_dist] [Rank 0] step=10, skipped=0, lr=[2.4125e-06], mom=[(0.9, 0.95)]
+[2023-10-08 21:45:38,357] [INFO] [timer.py:215:stop] epoch=0/micro_step=40/global_step=10, RunningAvgSamplesPerSec=1.655041604622921, CurrSamplesPerSec=1.6579834452495907, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 0, step: 39, loss: 0.7854127287864685
+epoch: 0, step: 40, loss: 0.715509295463562
+epoch: 0, step: 41, loss: 0.6640602350234985
+epoch: 0, step: 42, loss: 0.7146763205528259
+epoch: 0, step: 43, loss: 0.6950262784957886
+epoch: 0, step: 44, loss: 0.7003604769706726
+epoch: 0, step: 45, loss: 0.7127383947372437
+epoch: 0, step: 46, loss: 0.6929895281791687
+epoch: 0, step: 47, loss: 0.6386176347732544
+epoch: 0, step: 48, loss: 0.6630606651306152
+epoch: 0, step: 49, loss: 0.6225084066390991
+epoch: 0, step: 50, loss: 0.6580981016159058
+epoch: 0, step: 51, loss: 0.6254281401634216
+epoch: 0, step: 52, loss: 0.6678847670555115
+epoch: 0, step: 53, loss: 0.7457089424133301
+epoch: 0, step: 54, loss: 0.779080331325531
+epoch: 0, step: 55, loss: 0.663217306137085
+epoch: 0, step: 56, loss: 0.7598242163658142
+epoch: 0, step: 57, loss: 0.6495600938796997
+epoch: 0, step: 58, loss: 0.7712146639823914
+epoch: 0, step: 59, loss: 0.6190256476402283
+epoch: 0, step: 60, loss: 0.6470147371292114
+epoch: 0, step: 61, loss: 0.584248960018158
+epoch: 0, step: 62, loss: 0.6413227915763855
+epoch: 0, step: 63, loss: 0.6144438982009888
+epoch: 0, step: 64, loss: 0.6362016201019287
+epoch: 0, step: 65, loss: 0.6619811058044434
+epoch: 0, step: 66, loss: 0.6111268997192383
+epoch: 0, step: 67, loss: 0.4954575300216675
+epoch: 0, step: 68, loss: 0.6936134099960327
+epoch: 0, step: 69, loss: 0.6938483119010925
+epoch: 0, step: 70, loss: 0.6968578696250916
+epoch: 0, step: 71, loss: 0.6930040717124939
+epoch: 0, step: 72, loss: 0.6957827806472778
+epoch: 0, step: 73, loss: 0.6935398578643799
+epoch: 0, step: 74, loss: 0.6870545148849487
+epoch: 0, step: 75, loss: 0.6940218806266785
+epoch: 0, step: 76, loss: 0.6919792890548706
+epoch: 0, step: 77, loss: 0.6935953497886658
+epoch: 0, step: 78, loss: 0.6800212264060974
+[2023-10-08 22:00:04,988] [INFO] [logging.py:96:log_dist] [Rank 0] step=20, skipped=0, lr=[4.825e-06], mom=[(0.9, 0.95)]
+[2023-10-08 22:00:04,989] [INFO] [timer.py:215:stop] epoch=0/micro_step=80/global_step=20, RunningAvgSamplesPerSec=1.6587635094245752, CurrSamplesPerSec=1.6540115783427634, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 0, step: 79, loss: 0.7077328562736511
+epoch: 0, step: 80, loss: 0.6827821731567383
+epoch: 0, step: 81, loss: 0.6987342834472656
+epoch: 0, step: 82, loss: 0.6997313499450684
+epoch: 0, step: 83, loss: 0.6883933544158936
+epoch: 0, step: 84, loss: 0.6809799671173096
+epoch: 0, step: 85, loss: 0.6696057319641113
+epoch: 0, step: 86, loss: 0.6889992952346802
+epoch: 0, step: 87, loss: 0.6899058222770691
+epoch: 0, step: 88, loss: 0.68072509765625
+epoch: 0, step: 89, loss: 0.6862896680831909
+epoch: 0, step: 90, loss: 0.7680549621582031
+epoch: 0, step: 91, loss: 0.5481784343719482
+epoch: 0, step: 92, loss: 0.7098243236541748
+epoch: 0, step: 93, loss: 0.5757126212120056
+epoch: 0, step: 94, loss: 0.6654977798461914
+epoch: 0, step: 95, loss: 0.6836897730827332
+epoch: 0, step: 96, loss: 0.699270486831665
+epoch: 0, step: 97, loss: 0.6761622428894043
+epoch: 0, step: 98, loss: 0.6523546576499939
+epoch: 0, step: 99, loss: 0.6901974678039551
+epoch: 0, step: 100, loss: 0.695936918258667
+epoch: 0, step: 101, loss: 0.6899850368499756
+epoch: 0, step: 102, loss: 0.6899590492248535
+epoch: 0, step: 103, loss: 0.6661375761032104
+epoch: 0, step: 104, loss: 0.7098657488822937
+epoch: 0, step: 105, loss: 0.7107688784599304
+epoch: 0, step: 106, loss: 0.6159798502922058
+epoch: 0, step: 107, loss: 0.7784631252288818
+epoch: 0, step: 108, loss: 0.6577118635177612
+epoch: 0, step: 109, loss: 0.6981366872787476
+epoch: 0, step: 110, loss: 0.6804546117782593
+epoch: 0, step: 111, loss: 0.6885374784469604
+epoch: 0, step: 112, loss: 0.6937193274497986
+epoch: 0, step: 113, loss: 0.6782762408256531
+epoch: 0, step: 114, loss: 0.6816510558128357
+epoch: 0, step: 115, loss: 0.6826953291893005
+epoch: 0, step: 116, loss: 0.64044588804245
+epoch: 0, step: 117, loss: 0.6867484450340271
+epoch: 0, step: 118, loss: 0.6588572859764099
+[2023-10-08 22:14:32,203] [INFO] [logging.py:96:log_dist] [Rank 0] step=30, skipped=0, lr=[7.237500000000001e-06], mom=[(0.9, 0.95)]
+[2023-10-08 22:14:32,204] [INFO] [timer.py:215:stop] epoch=0/micro_step=120/global_step=30, RunningAvgSamplesPerSec=1.659431014370002, CurrSamplesPerSec=1.6506200916406315, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 0, step: 119, loss: 0.7131119966506958
+epoch: 0, step: 120, loss: 0.9261711835861206
+epoch: 0, step: 121, loss: 0.5614356398582458
+epoch: 0, step: 122, loss: 0.683294415473938
+epoch: 0, step: 123, loss: 0.622370183467865
+epoch: 0, step: 124, loss: 0.6360612511634827
+epoch: 0, step: 125, loss: 0.573426365852356
+epoch: 0, step: 126, loss: 0.6430627703666687
+epoch: 0, step: 127, loss: 0.6201550960540771
+epoch: 0, step: 128, loss: 0.7779048681259155
+epoch: 0, step: 129, loss: 0.6617815494537354
+epoch: 0, step: 130, loss: 0.7225543856620789
+epoch: 0, step: 131, loss: 0.6965545415878296
+epoch: 0, step: 132, loss: 0.5963518619537354
+epoch: 0, step: 133, loss: 0.6920795440673828
+epoch: 0, step: 134, loss: 0.5908503532409668
+epoch: 0, step: 135, loss: 0.5596761107444763
+epoch: 0, step: 136, loss: 0.8889715075492859
+epoch: 0, step: 137, loss: 0.7237915992736816
+epoch: 0, step: 138, loss: 0.6101078391075134
+epoch: 0, step: 139, loss: 0.6412352323532104
+epoch: 0, step: 140, loss: 0.5899848937988281
+epoch: 0, step: 141, loss: 0.6366254091262817
+epoch: 0, step: 142, loss: 0.5898549556732178
+epoch: 0, step: 143, loss: 0.6896883249282837
+epoch: 0, step: 144, loss: 0.5400620698928833
+epoch: 0, step: 145, loss: 0.7521747946739197
+epoch: 0, step: 146, loss: 0.6872603297233582
+epoch: 0, step: 147, loss: 0.6554970145225525
+epoch: 0, step: 148, loss: 0.5291697978973389
+epoch: 0, step: 149, loss: 0.4326765537261963
+epoch: 0, step: 150, loss: 0.5673738121986389
+epoch: 0, step: 151, loss: 0.6423405408859253
+epoch: 0, step: 152, loss: 0.7139356136322021
+epoch: 0, step: 153, loss: 0.4494311809539795
+epoch: 0, step: 154, loss: 0.7708998918533325
+epoch: 0, step: 155, loss: 0.7075559496879578
+epoch: 0, step: 156, loss: 0.5929305553436279
+epoch: 0, step: 157, loss: 0.7644534111022949
+epoch: 0, step: 158, loss: 0.6265990138053894
+[2023-10-08 22:29:15,134] [INFO] [logging.py:96:log_dist] [Rank 0] step=40, skipped=0, lr=[9.65e-06], mom=[(0.9, 0.95)]
+[2023-10-08 22:29:15,134] [INFO] [timer.py:215:stop] epoch=0/micro_step=160/global_step=40, RunningAvgSamplesPerSec=1.6518816489838781, CurrSamplesPerSec=1.661233995643939, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 0, step: 159, loss: 0.7745885848999023
+epoch: 0, step: 160, loss: 0.7264286875724792
+epoch: 0, step: 161, loss: 0.6453816294670105
+epoch: 0, step: 162, loss: 0.7073624134063721
+epoch: 0, step: 163, loss: 0.7149178981781006
+epoch: 0, step: 164, loss: 0.6098862886428833
+epoch: 0, step: 165, loss: 0.6334335803985596
+epoch: 0, step: 166, loss: 0.6860999464988708
+epoch: 0, step: 167, loss: 0.5915788412094116
+epoch: 0, step: 168, loss: 0.6514988541603088
+epoch: 0, step: 169, loss: 0.6677975654602051
+epoch: 0, step: 170, loss: 0.6296646595001221
+epoch: 0, step: 171, loss: 0.5082635879516602
+epoch: 0, step: 172, loss: 0.6958082914352417
+epoch: 0, step: 173, loss: 0.7833036184310913
+epoch: 0, step: 174, loss: 0.43010056018829346
+epoch: 0, step: 175, loss: 0.6465044021606445
+epoch: 0, step: 176, loss: 0.5008729100227356
+epoch: 0, step: 177, loss: 0.6704896688461304
+epoch: 0, step: 178, loss: 0.46999281644821167
+epoch: 0, step: 179, loss: 0.6749098300933838
+epoch: 0, step: 180, loss: 0.8254902362823486
+epoch: 0, step: 181, loss: 0.7284514904022217
+epoch: 0, step: 182, loss: 0.7767934203147888
+epoch: 0, step: 183, loss: 0.7132403254508972
+epoch: 0, step: 184, loss: 0.6305940747261047
+epoch: 0, step: 185, loss: 0.666475772857666
+epoch: 0, step: 186, loss: 0.7330672144889832
+epoch: 0, step: 187, loss: 0.8056957125663757
+epoch: 0, step: 188, loss: 0.762935996055603
+epoch: 0, step: 189, loss: 0.583671510219574
+epoch: 0, step: 190, loss: 0.6167037487030029
+epoch: 0, step: 191, loss: 0.6452205777168274
+epoch: 0, step: 192, loss: 0.7384005784988403
+epoch: 0, step: 193, loss: 0.5945444703102112
+epoch: 0, step: 194, loss: 0.6796156764030457
+epoch: 0, step: 195, loss: 0.6824790835380554
+epoch: 0, step: 196, loss: 0.6606110334396362
+epoch: 0, step: 197, loss: 0.5976748466491699
+epoch: 0, step: 198, loss: 0.5750381350517273
+[2023-10-08 22:43:40,258] [INFO] [logging.py:96:log_dist] [Rank 0] step=50, skipped=0, lr=[9.621715643269786e-06], mom=[(0.9, 0.95)]
+[2023-10-08 22:43:40,259] [INFO] [timer.py:215:stop] epoch=0/micro_step=200/global_step=50, RunningAvgSamplesPerSec=1.6545252342504195, CurrSamplesPerSec=1.6687802660634306, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 0, step: 199, loss: 0.6720148324966431
+epoch: 0, step: 200, loss: 0.49952709674835205
+chosen_last_scores (higher is better) : 2.8267908096313477, acc (higher is better) : 0.4452015900056786
+saving model ...
+epoch: 0, step: 201, loss: 0.6932543516159058
+epoch: 0, step: 202, loss: 0.6578727960586548
+epoch: 0, step: 203, loss: 0.7604402303695679
+epoch: 0, step: 204, loss: 0.5730302929878235
+epoch: 0, step: 205, loss: 0.7545012831687927
+epoch: 0, step: 206, loss: 0.5838539600372314
+epoch: 0, step: 207, loss: 0.7105482816696167
+epoch: 0, step: 208, loss: 0.6860453486442566
+epoch: 0, step: 209, loss: 0.6895785331726074
+epoch: 0, step: 210, loss: 0.6982736587524414
+epoch: 0, step: 211, loss: 0.685013473033905
+epoch: 0, step: 212, loss: 0.5013872981071472
+epoch: 0, step: 213, loss: 0.6594415903091431
+epoch: 0, step: 214, loss: 0.6588207483291626
+epoch: 0, step: 215, loss: 0.7119264602661133
+epoch: 0, step: 216, loss: 0.4892311096191406
+epoch: 0, step: 217, loss: 0.7443259954452515
+epoch: 0, step: 218, loss: 0.5463804006576538
+epoch: 0, step: 219, loss: 0.667496383190155
+epoch: 0, step: 220, loss: 0.39047569036483765
+epoch: 0, step: 221, loss: 0.6318992376327515
+epoch: 0, step: 222, loss: 0.6302272081375122
+epoch: 0, step: 223, loss: 0.6507720947265625
+epoch: 0, step: 224, loss: 0.6924907565116882
+epoch: 0, step: 225, loss: 0.5592093467712402
+epoch: 0, step: 226, loss: 0.6021870374679565
+epoch: 0, step: 227, loss: 0.7717858552932739
+epoch: 0, step: 228, loss: 0.9167446494102478
+epoch: 0, step: 229, loss: 0.6398872137069702
+epoch: 0, step: 230, loss: 0.7941417098045349
+epoch: 0, step: 231, loss: 0.49845775961875916
+epoch: 0, step: 232, loss: 0.6706820726394653
+epoch: 0, step: 233, loss: 0.6701578497886658
+epoch: 0, step: 234, loss: 0.5045744180679321
+epoch: 0, step: 235, loss: 0.5642132759094238
+epoch: 0, step: 236, loss: 0.6898347735404968
+epoch: 0, step: 237, loss: 0.7402094602584839
+epoch: 0, step: 238, loss: 0.6340701580047607
+[2023-10-08 23:32:56,057] [INFO] [logging.py:96:log_dist] [Rank 0] step=60, skipped=0, lr=[9.53719418130117e-06], mom=[(0.9, 0.95)]
+[2023-10-08 23:32:56,057] [INFO] [timer.py:215:stop] epoch=0/micro_step=240/global_step=60, RunningAvgSamplesPerSec=1.655387830434735, CurrSamplesPerSec=1.663789571481661, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 0, step: 239, loss: 0.6722413897514343
+epoch: 0, step: 240, loss: 0.5830936431884766
+epoch: 0, step: 241, loss: 0.41081351041793823
+epoch: 0, step: 242, loss: 0.7565784454345703
+epoch: 0, step: 243, loss: 0.7223213911056519
+epoch: 0, step: 244, loss: 0.5131477117538452
+epoch: 0, step: 245, loss: 0.7081016302108765
+epoch: 0, step: 246, loss: 0.8008731603622437
+epoch: 0, step: 247, loss: 0.6196045875549316
+epoch: 0, step: 248, loss: 0.7104969024658203
+epoch: 0, step: 249, loss: 0.7736685276031494
+epoch: 0, step: 250, loss: 0.4773145616054535
+epoch: 0, step: 251, loss: 0.6665012240409851
+epoch: 0, step: 252, loss: 0.6789956092834473
+epoch: 0, step: 253, loss: 0.6370714902877808
+epoch: 0, step: 254, loss: 0.7396857142448425
+epoch: 0, step: 255, loss: 0.6487723588943481
+epoch: 0, step: 256, loss: 0.658483624458313
+epoch: 0, step: 257, loss: 0.6183232069015503
+epoch: 0, step: 258, loss: 0.7220543622970581
+epoch: 0, step: 259, loss: 0.6722361445426941
+epoch: 0, step: 260, loss: 0.7506797313690186
+epoch: 0, step: 261, loss: 0.9224904775619507
+epoch: 0, step: 262, loss: 0.7132570147514343
+epoch: 0, step: 263, loss: 0.5559923052787781
+epoch: 0, step: 264, loss: 0.37151166796684265
+epoch: 0, step: 265, loss: 0.5589848160743713
+epoch: 0, step: 266, loss: 0.6995410919189453
+epoch: 0, step: 267, loss: 0.6575368642807007
+epoch: 0, step: 268, loss: 0.6599613428115845
+epoch: 0, step: 269, loss: 0.6385973691940308
+epoch: 0, step: 270, loss: 0.8452075719833374
+epoch: 0, step: 271, loss: 0.7300485372543335
+epoch: 0, step: 272, loss: 0.6195235252380371
+epoch: 0, step: 273, loss: 0.5953476428985596
+epoch: 0, step: 274, loss: 0.6042861342430115
+epoch: 0, step: 275, loss: 0.6475278735160828
+epoch: 0, step: 276, loss: 0.6792420148849487
+epoch: 0, step: 277, loss: 0.5754522085189819
+epoch: 0, step: 278, loss: 0.6028833389282227
+[2023-10-08 23:47:21,395] [INFO] [logging.py:96:log_dist] [Rank 0] step=70, skipped=0, lr=[9.397426550957023e-06], mom=[(0.9, 0.95)]
+[2023-10-08 23:47:21,396] [INFO] [timer.py:215:stop] epoch=0/micro_step=280/global_step=70, RunningAvgSamplesPerSec=1.6566828835379883, CurrSamplesPerSec=1.6655603445879565, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 0, step: 279, loss: 0.526800274848938
+epoch: 0, step: 280, loss: 0.7097474932670593
+epoch: 0, step: 281, loss: 0.6613150835037231
+epoch: 0, step: 282, loss: 0.6971237659454346
+epoch: 0, step: 283, loss: 0.8389078378677368
+epoch: 0, step: 284, loss: 0.577099084854126
+epoch: 0, step: 285, loss: 0.6981627941131592
+epoch: 0, step: 286, loss: 0.6673885583877563
+epoch: 0, step: 287, loss: 0.6349142789840698
+epoch: 0, step: 288, loss: 0.6730372309684753
+epoch: 0, step: 289, loss: 0.7025815844535828
+epoch: 0, step: 290, loss: 0.7303416132926941
+epoch: 0, step: 291, loss: 0.7314946055412292
+epoch: 0, step: 292, loss: 0.624222457408905
+epoch: 0, step: 293, loss: 0.6046066284179688
+epoch: 0, step: 294, loss: 0.6330232620239258
+epoch: 0, step: 295, loss: 0.5991568565368652
+epoch: 0, step: 296, loss: 0.6722673773765564
+epoch: 0, step: 297, loss: 0.7292212843894958
+epoch: 0, step: 298, loss: 0.7792028188705444
+epoch: 0, step: 299, loss: 0.6746582984924316
+epoch: 0, step: 300, loss: 0.5260236859321594
+epoch: 0, step: 301, loss: 0.6495741605758667
+epoch: 0, step: 302, loss: 0.5610577464103699
+epoch: 0, step: 303, loss: 0.6590873599052429
+epoch: 0, step: 304, loss: 0.5132778882980347
+epoch: 0, step: 305, loss: 0.7144791483879089
+epoch: 0, step: 306, loss: 0.7185582518577576
+epoch: 0, step: 307, loss: 0.49704962968826294
+epoch: 0, step: 308, loss: 0.8142495155334473
+epoch: 0, step: 309, loss: 0.8230255842208862
+epoch: 0, step: 310, loss: 0.5863468050956726
+epoch: 0, step: 311, loss: 0.6333937644958496
+epoch: 0, step: 312, loss: 0.5971053242683411
+epoch: 0, step: 313, loss: 0.6557939052581787
+epoch: 0, step: 314, loss: 0.5147504210472107
+epoch: 0, step: 315, loss: 0.7427794337272644
+epoch: 0, step: 316, loss: 0.5355002880096436
+epoch: 0, step: 317, loss: 0.6747475862503052
+epoch: 0, step: 318, loss: 0.7978122234344482
+[2023-10-09 00:01:47,038] [INFO] [logging.py:96:log_dist] [Rank 0] step=80, skipped=0, lr=[9.204051399912369e-06], mom=[(0.9, 0.95)]
+[2023-10-09 00:01:47,039] [INFO] [timer.py:215:stop] epoch=0/micro_step=320/global_step=80, RunningAvgSamplesPerSec=1.6575732136594006, CurrSamplesPerSec=1.664201570964102, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 0, step: 319, loss: 0.713152289390564
+epoch: 0, step: 320, loss: 0.7196038961410522
+epoch: 0, step: 321, loss: 0.6985946893692017
+epoch: 0, step: 322, loss: 0.6528693437576294
+epoch: 0, step: 323, loss: 0.49394094944000244
+epoch: 0, step: 324, loss: 0.6317434310913086
+epoch: 0, step: 325, loss: 0.4671383798122406
+epoch: 0, step: 326, loss: 0.5280580520629883
+epoch: 0, step: 327, loss: 0.611474871635437
+epoch: 0, step: 328, loss: 0.7731223106384277
+epoch: 0, step: 329, loss: 0.7131635546684265
+epoch: 0, step: 330, loss: 0.7816054224967957
+epoch: 0, step: 331, loss: 0.5681012868881226
+epoch: 0, step: 332, loss: 0.7083039283752441
+epoch: 0, step: 333, loss: 0.6754077672958374
+epoch: 0, step: 334, loss: 0.6720198392868042
+epoch: 0, step: 335, loss: 0.7067080736160278
+epoch: 0, step: 336, loss: 0.6844244003295898
+epoch: 0, step: 337, loss: 0.5996352434158325
+epoch: 0, step: 338, loss: 0.698487401008606
+epoch: 0, step: 339, loss: 0.6221445798873901
+epoch: 0, step: 340, loss: 0.6890315413475037
+epoch: 0, step: 341, loss: 0.6296793222427368
+epoch: 0, step: 342, loss: 0.6169334053993225
+epoch: 0, step: 343, loss: 0.6496228575706482
+epoch: 0, step: 344, loss: 0.799895167350769
+epoch: 0, step: 345, loss: 0.6345796585083008
+epoch: 0, step: 346, loss: 0.6677739024162292
+epoch: 0, step: 347, loss: 0.6557196378707886
+epoch: 0, step: 348, loss: 0.6828198432922363
+epoch: 0, step: 349, loss: 0.7033098936080933
+epoch: 0, step: 350, loss: 0.6475791931152344
+epoch: 0, step: 351, loss: 0.6696085929870605
+epoch: 0, step: 352, loss: 0.6159852743148804
+epoch: 0, step: 353, loss: 0.709084153175354
+epoch: 0, step: 354, loss: 0.570541501045227
+epoch: 0, step: 355, loss: 0.9048783183097839
+epoch: 0, step: 356, loss: 0.6065295338630676
+epoch: 0, step: 357, loss: 0.6075727939605713
+epoch: 0, step: 358, loss: 0.6234263181686401
+[2023-10-09 00:16:12,255] [INFO] [logging.py:96:log_dist] [Rank 0] step=90, skipped=0, lr=[8.959335875008619e-06], mom=[(0.9, 0.95)]
+[2023-10-09 00:16:12,256] [INFO] [timer.py:215:stop] epoch=0/micro_step=360/global_step=90, RunningAvgSamplesPerSec=1.6583541722190958, CurrSamplesPerSec=1.6645673289402607, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 0, step: 359, loss: 0.7028740644454956
+epoch: 0, step: 360, loss: 0.6335102319717407
+epoch: 0, step: 361, loss: 0.434628427028656
+epoch: 0, step: 362, loss: 0.7269377708435059
+epoch: 0, step: 363, loss: 0.6695595979690552
+epoch: 0, step: 364, loss: 0.7267472147941589
+epoch: 0, step: 365, loss: 0.7092479467391968
+epoch: 0, step: 366, loss: 0.771061360836029
+epoch: 0, step: 367, loss: 0.7957131266593933
+epoch: 0, step: 368, loss: 0.665736734867096
+epoch: 0, step: 369, loss: 0.5816116333007812
+epoch: 0, step: 370, loss: 0.4921259880065918
+epoch: 0, step: 371, loss: 1.1120998859405518
+epoch: 0, step: 372, loss: 0.6099087595939636
+epoch: 0, step: 373, loss: 0.7198930978775024
+epoch: 0, step: 374, loss: 0.5491440296173096
+epoch: 0, step: 375, loss: 0.5465439558029175
+epoch: 0, step: 376, loss: 0.6495163440704346
+epoch: 0, step: 377, loss: 0.857320249080658
+epoch: 0, step: 378, loss: 0.5829217433929443
+epoch: 0, step: 379, loss: 0.6312614679336548
+epoch: 0, step: 380, loss: 0.5681089758872986
+epoch: 0, step: 381, loss: 0.6724221110343933
+epoch: 0, step: 382, loss: 0.7131376266479492
+epoch: 0, step: 383, loss: 0.7859934568405151
+epoch: 0, step: 384, loss: 0.6396241188049316
+epoch: 0, step: 385, loss: 0.7489026784896851
+epoch: 0, step: 386, loss: 0.533424973487854
+epoch: 0, step: 387, loss: 0.6302586197853088
+epoch: 0, step: 388, loss: 0.6556884050369263
+epoch: 0, step: 389, loss: 0.6240471601486206
+epoch: 0, step: 390, loss: 0.7463755011558533
+epoch: 0, step: 391, loss: 0.5830493569374084
+epoch: 0, step: 392, loss: 0.7255210280418396
+epoch: 0, step: 393, loss: 0.6197159290313721
+epoch: 0, step: 394, loss: 0.6724328994750977
+epoch: 0, step: 395, loss: 0.7383613586425781
+epoch: 0, step: 396, loss: 0.5484151244163513
+epoch: 0, step: 397, loss: 0.6235406398773193
+epoch: 0, step: 398, loss: 0.6408706307411194
+[2023-10-09 00:30:37,238] [INFO] [logging.py:96:log_dist] [Rank 0] step=100, skipped=0, lr=[8.666149042029731e-06], mom=[(0.9, 0.95)]
+[2023-10-09 00:30:37,239] [INFO] [timer.py:215:stop] epoch=0/micro_step=400/global_step=100, RunningAvgSamplesPerSec=1.6590219904867678, CurrSamplesPerSec=1.6611329404459196, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 0, step: 399, loss: 0.7638017535209656
+epoch: 0, step: 400, loss: 0.5364705324172974
+chosen_last_scores (higher is better) : 2.3340606689453125, acc (higher is better) : 0.48665530948324814
+saving model ...
+epoch: 0, step: 401, loss: 0.6394549012184143
+epoch: 0, step: 402, loss: 0.48397716879844666
+epoch: 0, step: 403, loss: 0.7185293436050415
+epoch: 0, step: 404, loss: 0.8576779365539551
+epoch: 0, step: 405, loss: 0.6613210439682007
+epoch: 0, step: 406, loss: 0.6294355392456055
+epoch: 0, step: 407, loss: 0.6686084270477295
+epoch: 0, step: 408, loss: 0.5638927817344666
+epoch: 0, step: 409, loss: 0.6182519793510437
+epoch: 0, step: 410, loss: 0.8602511286735535
+epoch: 0, step: 411, loss: 0.6324713230133057
+epoch: 0, step: 412, loss: 0.6231976747512817
+epoch: 0, step: 413, loss: 0.6293482184410095
+epoch: 0, step: 414, loss: 0.7425013780593872
+epoch: 0, step: 415, loss: 0.7448083162307739
+epoch: 0, step: 416, loss: 0.6116117238998413
+epoch: 0, step: 417, loss: 0.6362631916999817
+epoch: 0, step: 418, loss: 0.500956654548645
+epoch: 0, step: 419, loss: 0.6516281962394714
+epoch: 0, step: 420, loss: 0.5302059650421143
+epoch: 0, step: 421, loss: 0.5923374891281128
+epoch: 0, step: 422, loss: 0.6271395683288574
+epoch: 0, step: 423, loss: 0.5870716571807861
+epoch: 0, step: 424, loss: 0.5098029375076294
+epoch: 0, step: 425, loss: 0.5289544463157654
+epoch: 0, step: 426, loss: 0.8791980147361755
+epoch: 0, step: 427, loss: 0.8080708384513855
+epoch: 0, step: 428, loss: 0.6467716693878174
+epoch: 0, step: 429, loss: 0.633070170879364
+epoch: 0, step: 430, loss: 0.5990992784500122
+epoch: 0, step: 431, loss: 0.6490656137466431
+epoch: 0, step: 432, loss: 0.6711823344230652
+epoch: 0, step: 433, loss: 0.7272439002990723
+epoch: 0, step: 434, loss: 0.43263205885887146
+epoch: 0, step: 435, loss: 0.7901506423950195
+epoch: 0, step: 436, loss: 0.827835738658905
+epoch: 0, step: 437, loss: 0.7537201642990112
+epoch: 0, step: 438, loss: 0.7803182601928711
+[2023-10-09 01:19:54,576] [INFO] [logging.py:96:log_dist] [Rank 0] step=110, skipped=0, lr=[8.327928248529106e-06], mom=[(0.9, 0.95)]
+[2023-10-09 01:19:54,577] [INFO] [timer.py:215:stop] epoch=0/micro_step=440/global_step=110, RunningAvgSamplesPerSec=1.6592024881158007, CurrSamplesPerSec=1.6658109177477793, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 0, step: 439, loss: 0.5603319406509399
+Epoch 1/3 with loss 0.6642508961937644
+***** Evaluating reward, Epoch 1/3 *****
+chosen_last_scores (higher is better) : 2.520504951477051, acc (higher is better) : 0.48875
+Beginning of Epoch 2/3, Total Micro Batches 440
+epoch: 1, step: 0, loss: 0.7017029523849487
+epoch: 1, step: 1, loss: 0.5849180817604065
+epoch: 1, step: 2, loss: 0.8426011800765991
+epoch: 1, step: 3, loss: 0.4592646360397339
+epoch: 1, step: 4, loss: 0.7355642318725586
+epoch: 1, step: 5, loss: 0.5837916135787964
+epoch: 1, step: 6, loss: 0.5728718638420105
+epoch: 1, step: 7, loss: 0.5710632801055908
+epoch: 1, step: 8, loss: 0.6362254023551941
+epoch: 1, step: 9, loss: 0.7376666069030762
+epoch: 1, step: 10, loss: 0.583346962928772
+epoch: 1, step: 11, loss: 0.6975984573364258
+epoch: 1, step: 12, loss: 0.7925963401794434
+epoch: 1, step: 13, loss: 0.718805730342865
+epoch: 1, step: 14, loss: 0.47319599986076355
+epoch: 1, step: 15, loss: 0.581997811794281
+epoch: 1, step: 16, loss: 0.6518664360046387
+epoch: 1, step: 17, loss: 0.7779706716537476
+epoch: 1, step: 18, loss: 0.6029683351516724
+epoch: 1, step: 19, loss: 0.6016441583633423
+epoch: 1, step: 20, loss: 0.5974040031433105
+epoch: 1, step: 21, loss: 0.716262698173523
+epoch: 1, step: 22, loss: 0.6160591244697571
+epoch: 1, step: 23, loss: 0.5842784643173218
+epoch: 1, step: 24, loss: 0.7355207204818726
+epoch: 1, step: 25, loss: 0.5621733069419861
+epoch: 1, step: 26, loss: 0.631615161895752
+epoch: 1, step: 27, loss: 0.6210644245147705
+epoch: 1, step: 28, loss: 0.5881731510162354
+epoch: 1, step: 29, loss: 0.5875471830368042
+epoch: 1, step: 30, loss: 0.5512508749961853
+epoch: 1, step: 31, loss: 0.5538254976272583
+epoch: 1, step: 32, loss: 0.8045004606246948
+epoch: 1, step: 33, loss: 0.6867552995681763
+epoch: 1, step: 34, loss: 0.568666934967041
+epoch: 1, step: 35, loss: 0.6639077067375183
+epoch: 1, step: 36, loss: 0.683978259563446
+epoch: 1, step: 37, loss: 0.6804501414299011
+epoch: 1, step: 38, loss: 0.6550564169883728
+[2023-10-09 01:49:33,954] [INFO] [logging.py:96:log_dist] [Rank 0] step=120, skipped=0, lr=[7.94863882407232e-06], mom=[(0.9, 0.95)]
+[2023-10-09 01:49:33,955] [INFO] [timer.py:215:stop] epoch=1/micro_step=40/global_step=120, RunningAvgSamplesPerSec=1.6595982481127876, CurrSamplesPerSec=1.6673968839648532, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 1, step: 39, loss: 0.9387942552566528
+epoch: 1, step: 40, loss: 0.577277660369873
+epoch: 1, step: 41, loss: 0.7357930541038513
+epoch: 1, step: 42, loss: 0.6103221774101257
+epoch: 1, step: 43, loss: 0.534808874130249
+epoch: 1, step: 44, loss: 0.695931077003479
+epoch: 1, step: 45, loss: 0.6388038396835327
+epoch: 1, step: 46, loss: 0.5420697927474976
+epoch: 1, step: 47, loss: 0.4139373302459717
+epoch: 1, step: 48, loss: 0.7344877123832703
+epoch: 1, step: 49, loss: 0.631370484828949
+epoch: 1, step: 50, loss: 0.5597919821739197
+epoch: 1, step: 51, loss: 0.6111716032028198
+epoch: 1, step: 52, loss: 0.7013127207756042
+epoch: 1, step: 53, loss: 0.6736807823181152
+epoch: 1, step: 54, loss: 0.9795783758163452
+epoch: 1, step: 55, loss: 0.6103500127792358
+epoch: 1, step: 56, loss: 0.5828276872634888
+epoch: 1, step: 57, loss: 0.6351240277290344
+epoch: 1, step: 58, loss: 0.7298485636711121
+epoch: 1, step: 59, loss: 0.6612688899040222
+epoch: 1, step: 60, loss: 0.6889302134513855
+epoch: 1, step: 61, loss: 0.6091915369033813
+epoch: 1, step: 62, loss: 0.6463640928268433
+epoch: 1, step: 63, loss: 0.6594809293746948
+epoch: 1, step: 64, loss: 0.5787320137023926
+epoch: 1, step: 65, loss: 0.5995804071426392
+epoch: 1, step: 66, loss: 0.6060935258865356
+epoch: 1, step: 67, loss: 0.5117881894111633
+epoch: 1, step: 68, loss: 0.675173282623291
+epoch: 1, step: 69, loss: 0.6531026363372803
+epoch: 1, step: 70, loss: 0.6657358407974243
+epoch: 1, step: 71, loss: 0.7435192465782166
+epoch: 1, step: 72, loss: 0.8112297058105469
+epoch: 1, step: 73, loss: 0.6224559545516968
+epoch: 1, step: 74, loss: 0.6113604307174683
+epoch: 1, step: 75, loss: 0.7290431261062622
+epoch: 1, step: 76, loss: 0.7062902450561523
+epoch: 1, step: 77, loss: 0.6086243391036987
+epoch: 1, step: 78, loss: 0.46231192350387573
+[2023-10-09 02:03:59,632] [INFO] [logging.py:96:log_dist] [Rank 0] step=130, skipped=0, lr=[7.532727590373496e-06], mom=[(0.9, 0.95)]
+[2023-10-09 02:03:59,632] [INFO] [timer.py:215:stop] epoch=1/micro_step=80/global_step=130, RunningAvgSamplesPerSec=1.659909202958002, CurrSamplesPerSec=1.6686896042953023, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 1, step: 79, loss: 0.962255597114563
+epoch: 1, step: 80, loss: 0.6048177480697632
+epoch: 1, step: 81, loss: 0.7107924818992615
+epoch: 1, step: 82, loss: 0.9259352087974548
+epoch: 1, step: 83, loss: 0.6943626403808594
+epoch: 1, step: 84, loss: 0.5847804546356201
+epoch: 1, step: 85, loss: 0.45651814341545105
+epoch: 1, step: 86, loss: 0.695855975151062
+epoch: 1, step: 87, loss: 0.6890290975570679
+epoch: 1, step: 88, loss: 0.6550395488739014
+epoch: 1, step: 89, loss: 0.6609247922897339
+epoch: 1, step: 90, loss: 0.8030697107315063
+epoch: 1, step: 91, loss: 0.3693464994430542
+epoch: 1, step: 92, loss: 0.7104512453079224
+epoch: 1, step: 93, loss: 0.38185223937034607
+epoch: 1, step: 94, loss: 0.5484781265258789
+epoch: 1, step: 95, loss: 0.6521879434585571
+epoch: 1, step: 96, loss: 0.5610032081604004
+epoch: 1, step: 97, loss: 0.5855449438095093
+epoch: 1, step: 98, loss: 0.5636197328567505
+epoch: 1, step: 99, loss: 0.6614355444908142
+epoch: 1, step: 100, loss: 0.6023404002189636
+epoch: 1, step: 101, loss: 0.7020487189292908
+epoch: 1, step: 102, loss: 0.581000566482544
+epoch: 1, step: 103, loss: 0.4602477550506592
+epoch: 1, step: 104, loss: 0.7615156173706055
+epoch: 1, step: 105, loss: 0.4497884213924408
+epoch: 1, step: 106, loss: 0.6353382468223572
+epoch: 1, step: 107, loss: 0.6323245763778687
+epoch: 1, step: 108, loss: 0.5000564455986023
+epoch: 1, step: 109, loss: 0.6659831404685974
+epoch: 1, step: 110, loss: 0.6211332678794861
+epoch: 1, step: 111, loss: 0.6308660507202148
+epoch: 1, step: 112, loss: 0.6240929365158081
+epoch: 1, step: 113, loss: 0.4551028609275818
+epoch: 1, step: 114, loss: 0.6709938049316406
+epoch: 1, step: 115, loss: 0.6360751390457153
+epoch: 1, step: 116, loss: 0.48564788699150085
+epoch: 1, step: 117, loss: 0.6859795451164246
+epoch: 1, step: 118, loss: 0.6659471392631531
+[2023-10-09 02:18:25,615] [INFO] [logging.py:96:log_dist] [Rank 0] step=140, skipped=0, lr=[7.085070726376488e-06], mom=[(0.9, 0.95)]
+[2023-10-09 02:18:25,615] [INFO] [timer.py:215:stop] epoch=1/micro_step=120/global_step=140, RunningAvgSamplesPerSec=1.6601324885313784, CurrSamplesPerSec=1.666872294024062, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 1, step: 119, loss: 0.7318913340568542
+epoch: 1, step: 120, loss: 0.6482357978820801
+epoch: 1, step: 121, loss: 0.621261715888977
+epoch: 1, step: 122, loss: 0.4646326005458832
+epoch: 1, step: 123, loss: 0.6044929027557373
+epoch: 1, step: 124, loss: 0.5454093217849731
+epoch: 1, step: 125, loss: 0.3933560848236084
+epoch: 1, step: 126, loss: 0.6188621520996094
+epoch: 1, step: 127, loss: 0.5641013383865356
+epoch: 1, step: 128, loss: 0.35864171385765076
+epoch: 1, step: 129, loss: 0.6152007579803467
+epoch: 1, step: 130, loss: 0.621364414691925
+epoch: 1, step: 131, loss: 0.5763922929763794
+epoch: 1, step: 132, loss: 0.39122217893600464
+epoch: 1, step: 133, loss: 0.4339136481285095
+epoch: 1, step: 134, loss: 0.35186129808425903
+epoch: 1, step: 135, loss: 0.6871106624603271
+epoch: 1, step: 136, loss: 0.5550147294998169
+epoch: 1, step: 137, loss: 0.732704758644104
+epoch: 1, step: 138, loss: 0.5384563207626343
+epoch: 1, step: 139, loss: 0.48517531156539917
+epoch: 1, step: 140, loss: 0.6610187292098999
+epoch: 1, step: 141, loss: 0.40146881341934204
+epoch: 1, step: 142, loss: 0.4302080571651459
+epoch: 1, step: 143, loss: 0.4960821568965912
+epoch: 1, step: 144, loss: 0.546947717666626
+epoch: 1, step: 145, loss: 0.41983264684677124
+epoch: 1, step: 146, loss: 0.4862227141857147
+epoch: 1, step: 147, loss: 0.5184459686279297
+epoch: 1, step: 148, loss: 0.3464992046356201
+epoch: 1, step: 149, loss: 0.29399198293685913
+epoch: 1, step: 150, loss: 0.4510805308818817
+epoch: 1, step: 151, loss: 0.523118257522583
+epoch: 1, step: 152, loss: 0.6503309607505798
+epoch: 1, step: 153, loss: 0.13006262481212616
+epoch: 1, step: 154, loss: 0.8208065032958984
+epoch: 1, step: 155, loss: 1.0783631801605225
+epoch: 1, step: 156, loss: 0.15750746428966522
+epoch: 1, step: 157, loss: 0.8392928838729858
+epoch: 1, step: 158, loss: 0.23770050704479218
+[2023-10-09 02:32:51,281] [INFO] [logging.py:96:log_dist] [Rank 0] step=150, skipped=0, lr=[6.610916599515089e-06], mom=[(0.9, 0.95)]
+[2023-10-09 02:32:51,282] [INFO] [timer.py:215:stop] epoch=1/micro_step=160/global_step=150, RunningAvgSamplesPerSec=1.6603691102264937, CurrSamplesPerSec=1.666453550287099, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 1, step: 159, loss: 0.5347925424575806
+epoch: 1, step: 160, loss: 0.7492966055870056
+epoch: 1, step: 161, loss: 0.42868635058403015
+epoch: 1, step: 162, loss: 0.5710117816925049
+epoch: 1, step: 163, loss: 0.6212301254272461
+epoch: 1, step: 164, loss: 0.4185379445552826
+epoch: 1, step: 165, loss: 0.26831087470054626
+epoch: 1, step: 166, loss: 0.3336580991744995
+epoch: 1, step: 167, loss: 0.535291314125061
+epoch: 1, step: 168, loss: 0.711915910243988
+epoch: 1, step: 169, loss: 0.29639893770217896
+epoch: 1, step: 170, loss: 0.40888676047325134
+epoch: 1, step: 171, loss: 0.15396258234977722
+epoch: 1, step: 172, loss: 0.34071990847587585
+epoch: 1, step: 173, loss: 0.7527207136154175
+epoch: 1, step: 174, loss: 0.12039178609848022
+epoch: 1, step: 175, loss: 0.5223382711410522
+epoch: 1, step: 176, loss: 0.4888575077056885
+epoch: 1, step: 177, loss: 0.8180548548698425
+epoch: 1, step: 178, loss: 0.48122644424438477
+epoch: 1, step: 179, loss: 0.6275582313537598
+epoch: 1, step: 180, loss: 0.7682504653930664
+epoch: 1, step: 181, loss: 0.5189872980117798
+epoch: 1, step: 182, loss: 0.5398033857345581
+epoch: 1, step: 183, loss: 0.6155402660369873
+epoch: 1, step: 184, loss: 0.6025656461715698
+epoch: 1, step: 185, loss: 0.8145006895065308
+epoch: 1, step: 186, loss: 0.4040905237197876
+epoch: 1, step: 187, loss: 0.5781568884849548
+epoch: 1, step: 188, loss: 0.8437973856925964
+epoch: 1, step: 189, loss: 0.6982387900352478
+epoch: 1, step: 190, loss: 0.49175918102264404
+epoch: 1, step: 191, loss: 0.36357754468917847
+epoch: 1, step: 192, loss: 0.5331175327301025
+epoch: 1, step: 193, loss: 0.4264358878135681
+epoch: 1, step: 194, loss: 0.49444788694381714
+epoch: 1, step: 195, loss: 0.6500113606452942
+epoch: 1, step: 196, loss: 0.5177111029624939
+epoch: 1, step: 197, loss: 0.45380645990371704
+epoch: 1, step: 198, loss: 0.3820607364177704
+[2023-10-09 02:47:17,169] [INFO] [logging.py:96:log_dist] [Rank 0] step=160, skipped=0, lr=[6.115824233403492e-06], mom=[(0.9, 0.95)]
+[2023-10-09 02:47:17,169] [INFO] [timer.py:215:stop] epoch=1/micro_step=200/global_step=160, RunningAvgSamplesPerSec=1.6605468637840066, CurrSamplesPerSec=1.6650975335418663, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 1, step: 199, loss: 0.5451822280883789
+epoch: 1, step: 200, loss: 0.42911624908447266
+chosen_last_scores (higher is better) : 1.890913963317871, acc (higher is better) : 0.47245883021010787
+epoch: 1, step: 201, loss: 0.4412705898284912
+epoch: 1, step: 202, loss: 0.3973575830459595
+epoch: 1, step: 203, loss: 0.6835662722587585
+epoch: 1, step: 204, loss: 0.4138091802597046
+epoch: 1, step: 205, loss: 0.3267641067504883
+epoch: 1, step: 206, loss: 0.34617263078689575
+epoch: 1, step: 207, loss: 0.4503161609172821
+epoch: 1, step: 208, loss: 0.48505493998527527
+epoch: 1, step: 209, loss: 0.4674573838710785
+epoch: 1, step: 210, loss: 0.19867926836013794
+epoch: 1, step: 211, loss: 0.2682156562805176
+epoch: 1, step: 212, loss: 0.25031745433807373
+epoch: 1, step: 213, loss: 0.44962233304977417
+epoch: 1, step: 214, loss: 0.391981303691864
+epoch: 1, step: 215, loss: 0.3483883738517761
+epoch: 1, step: 216, loss: 0.03858184814453125
+epoch: 1, step: 217, loss: 0.34920844435691833
+epoch: 1, step: 218, loss: 0.33914482593536377
+epoch: 1, step: 219, loss: 0.07959994673728943
+epoch: 1, step: 220, loss: 0.18961088359355927
+epoch: 1, step: 221, loss: 0.5342434644699097
+epoch: 1, step: 222, loss: 0.30275046825408936
+epoch: 1, step: 223, loss: 0.13422125577926636
+epoch: 1, step: 224, loss: 0.2552749514579773
+epoch: 1, step: 225, loss: 0.3535768687725067
+epoch: 1, step: 226, loss: 0.3370548188686371
+epoch: 1, step: 227, loss: 0.19481675326824188
+epoch: 1, step: 228, loss: 0.42678070068359375
+epoch: 1, step: 229, loss: 0.36235713958740234
+epoch: 1, step: 230, loss: 0.3948535919189453
+epoch: 1, step: 231, loss: 0.21045136451721191
+epoch: 1, step: 232, loss: 0.17405542731285095
+epoch: 1, step: 233, loss: 0.9444062113761902
+epoch: 1, step: 234, loss: 0.2076030969619751
+epoch: 1, step: 235, loss: 0.28808438777923584
+epoch: 1, step: 236, loss: 0.36718302965164185
+epoch: 1, step: 237, loss: 0.2000303566455841
+epoch: 1, step: 238, loss: 0.31154191493988037
+[2023-10-09 03:35:23,892] [INFO] [logging.py:96:log_dist] [Rank 0] step=170, skipped=0, lr=[5.6055981333670914e-06], mom=[(0.9, 0.95)]
+[2023-10-09 03:35:23,893] [INFO] [timer.py:215:stop] epoch=1/micro_step=240/global_step=170, RunningAvgSamplesPerSec=1.6603880024544146, CurrSamplesPerSec=1.6620435569773953, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 1, step: 239, loss: 0.17866158485412598
+epoch: 1, step: 240, loss: 0.1189953088760376
+epoch: 1, step: 241, loss: 0.22666655480861664
+epoch: 1, step: 242, loss: 0.19950847327709198
+epoch: 1, step: 243, loss: 0.1279708594083786
+epoch: 1, step: 244, loss: 0.263721227645874
+epoch: 1, step: 245, loss: 0.31396687030792236
+epoch: 1, step: 246, loss: 0.6976820230484009
+epoch: 1, step: 247, loss: 0.34019285440444946
+epoch: 1, step: 248, loss: 0.4949744641780853
+epoch: 1, step: 249, loss: 0.3635888993740082
+epoch: 1, step: 250, loss: 0.3196961283683777
+epoch: 1, step: 251, loss: 0.3921436071395874
+epoch: 1, step: 252, loss: 0.4388943910598755
+epoch: 1, step: 253, loss: 0.3247653841972351
+epoch: 1, step: 254, loss: 0.6373357176780701
+epoch: 1, step: 255, loss: 0.21727673709392548
+epoch: 1, step: 256, loss: 0.4354621171951294
+epoch: 1, step: 257, loss: 0.2868208885192871
+epoch: 1, step: 258, loss: 0.5409561395645142
+epoch: 1, step: 259, loss: 0.7520955801010132
+epoch: 1, step: 260, loss: 0.6256793737411499
+epoch: 1, step: 261, loss: 0.348665326833725
+epoch: 1, step: 262, loss: 0.49215468764305115
+epoch: 1, step: 263, loss: 0.2528716027736664
+epoch: 1, step: 264, loss: 0.023618683218955994
+epoch: 1, step: 265, loss: 0.35020869970321655
+epoch: 1, step: 266, loss: 0.3876161575317383
+epoch: 1, step: 267, loss: 0.178188294172287
+epoch: 1, step: 268, loss: 0.10243716090917587
+epoch: 1, step: 269, loss: 0.31034237146377563
+epoch: 1, step: 270, loss: 0.4319479465484619
+epoch: 1, step: 271, loss: 0.33476704359054565
+epoch: 1, step: 272, loss: 0.2134358137845993
+epoch: 1, step: 273, loss: 0.2771379351615906
+epoch: 1, step: 274, loss: 0.17947916686534882
+epoch: 1, step: 275, loss: 0.3261779546737671
+epoch: 1, step: 276, loss: 0.29615849256515503
+epoch: 1, step: 277, loss: 0.2962668538093567
+epoch: 1, step: 278, loss: 0.2538735270500183
+[2023-10-09 03:49:49,481] [INFO] [logging.py:96:log_dist] [Rank 0] step=180, skipped=0, lr=[5.08622023392464e-06], mom=[(0.9, 0.95)]
+[2023-10-09 03:49:49,482] [INFO] [timer.py:215:stop] epoch=1/micro_step=280/global_step=180, RunningAvgSamplesPerSec=1.660576789495414, CurrSamplesPerSec=1.6625781409332157, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 1, step: 279, loss: 0.29996752738952637
+epoch: 1, step: 280, loss: 0.3296308219432831
+epoch: 1, step: 281, loss: 0.2697010636329651
+epoch: 1, step: 282, loss: 0.3920815885066986
+epoch: 1, step: 283, loss: 0.39355286955833435
+epoch: 1, step: 284, loss: 0.29468685388565063
+epoch: 1, step: 285, loss: 0.20244775712490082
+epoch: 1, step: 286, loss: 0.39990925788879395
+epoch: 1, step: 287, loss: 0.3642998933792114
+epoch: 1, step: 288, loss: 0.2370130866765976
+epoch: 1, step: 289, loss: 0.3695158362388611
+epoch: 1, step: 290, loss: 0.2749265134334564
+epoch: 1, step: 291, loss: 0.8070068359375
+epoch: 1, step: 292, loss: 0.4677247405052185
+epoch: 1, step: 293, loss: 0.19204935431480408
+epoch: 1, step: 294, loss: 0.2453114092350006
+epoch: 1, step: 295, loss: 0.15832287073135376
+epoch: 1, step: 296, loss: 0.558259129524231
+epoch: 1, step: 297, loss: 0.2556697130203247
+epoch: 1, step: 298, loss: 0.5183783769607544
+epoch: 1, step: 299, loss: 0.5016165375709534
+epoch: 1, step: 300, loss: 0.15976160764694214
+epoch: 1, step: 301, loss: 0.21809694170951843
+epoch: 1, step: 302, loss: 0.49899622797966003
+epoch: 1, step: 303, loss: 0.46426141262054443
+epoch: 1, step: 304, loss: 0.19096896052360535
+epoch: 1, step: 305, loss: 0.6236702799797058
+epoch: 1, step: 306, loss: 0.5869629979133606
+epoch: 1, step: 307, loss: 0.13780543208122253
+epoch: 1, step: 308, loss: 0.29460716247558594
+epoch: 1, step: 309, loss: 0.5506744384765625
+epoch: 1, step: 310, loss: 0.19253717362880707
+epoch: 1, step: 311, loss: 0.42409953474998474
+epoch: 1, step: 312, loss: 0.37516579031944275
+epoch: 1, step: 313, loss: 0.3512152433395386
+epoch: 1, step: 314, loss: 0.30950772762298584
+epoch: 1, step: 315, loss: 0.396378755569458
+epoch: 1, step: 316, loss: 0.3378868103027344
+epoch: 1, step: 317, loss: 0.45158469676971436
+epoch: 1, step: 318, loss: 0.18434375524520874
+[2023-10-09 04:04:15,484] [INFO] [logging.py:96:log_dist] [Rank 0] step=190, skipped=0, lr=[4.563779766075361e-06], mom=[(0.9, 0.95)]
+[2023-10-09 04:04:15,485] [INFO] [timer.py:215:stop] epoch=1/micro_step=320/global_step=190, RunningAvgSamplesPerSec=1.6607034343275031, CurrSamplesPerSec=1.6628261877684356, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 1, step: 319, loss: 0.49601930379867554
+epoch: 1, step: 320, loss: 0.07215862721204758
+epoch: 1, step: 321, loss: 0.02510000392794609
+epoch: 1, step: 322, loss: 0.31034737825393677
+epoch: 1, step: 323, loss: 0.3209077715873718
+epoch: 1, step: 324, loss: 0.3098772466182709
+epoch: 1, step: 325, loss: 0.13288730382919312
+epoch: 1, step: 326, loss: 0.24808919429779053
+epoch: 1, step: 327, loss: 0.04556122049689293
+epoch: 1, step: 328, loss: 0.4542272686958313
+epoch: 1, step: 329, loss: 0.5172643661499023
+epoch: 1, step: 330, loss: 0.24092638492584229
+epoch: 1, step: 331, loss: 0.1296376883983612
+epoch: 1, step: 332, loss: 0.32455337047576904
+epoch: 1, step: 333, loss: 0.10211509466171265
+epoch: 1, step: 334, loss: 0.576993465423584
+epoch: 1, step: 335, loss: 0.4380655884742737
+epoch: 1, step: 336, loss: 0.07798778265714645
+epoch: 1, step: 337, loss: 0.2301979660987854
+epoch: 1, step: 338, loss: 0.7804148197174072
+epoch: 1, step: 339, loss: 0.1783168911933899
+epoch: 1, step: 340, loss: 0.255984365940094
+epoch: 1, step: 341, loss: 0.4436042308807373
+epoch: 1, step: 342, loss: 0.16880320012569427
+epoch: 1, step: 343, loss: 0.46934792399406433
+epoch: 1, step: 344, loss: 0.4895200729370117
+epoch: 1, step: 345, loss: 0.27625519037246704
+epoch: 1, step: 346, loss: 0.27982038259506226
+epoch: 1, step: 347, loss: 0.19523200392723083
+epoch: 1, step: 348, loss: 0.6218394637107849
+epoch: 1, step: 349, loss: 0.23208007216453552
+epoch: 1, step: 350, loss: 0.4528641402721405
+epoch: 1, step: 351, loss: 0.16771303117275238
+epoch: 1, step: 352, loss: 0.18750715255737305
+epoch: 1, step: 353, loss: 0.08229383826255798
+epoch: 1, step: 354, loss: 0.3097521662712097
+epoch: 1, step: 355, loss: 0.38923120498657227
+epoch: 1, step: 356, loss: 0.11014395207166672
+epoch: 1, step: 357, loss: 0.19811205565929413
+epoch: 1, step: 358, loss: 0.45234736800193787
+[2023-10-09 04:18:42,385] [INFO] [logging.py:96:log_dist] [Rank 0] step=200, skipped=0, lr=[4.044401866632911e-06], mom=[(0.9, 0.95)]
+[2023-10-09 04:18:42,386] [INFO] [timer.py:215:stop] epoch=1/micro_step=360/global_step=200, RunningAvgSamplesPerSec=1.66073038618054, CurrSamplesPerSec=1.6594705857699248, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 1, step: 359, loss: 0.33025631308555603
+epoch: 1, step: 360, loss: 0.14512097835540771
+epoch: 1, step: 361, loss: 0.029005911201238632
+epoch: 1, step: 362, loss: 0.31855353713035583
+epoch: 1, step: 363, loss: 0.2891436219215393
+epoch: 1, step: 364, loss: 0.162185937166214
+epoch: 1, step: 365, loss: 0.11378392577171326
+epoch: 1, step: 366, loss: 0.24236898124217987
+epoch: 1, step: 367, loss: 0.7828044295310974
+epoch: 1, step: 368, loss: 0.0912977084517479
+epoch: 1, step: 369, loss: 0.37126144766807556
+epoch: 1, step: 370, loss: 0.4962480664253235
+epoch: 1, step: 371, loss: 0.4437333345413208
+epoch: 1, step: 372, loss: 0.008768903091549873
+epoch: 1, step: 373, loss: 0.0873144119977951
+epoch: 1, step: 374, loss: 0.30374687910079956
+epoch: 1, step: 375, loss: 0.3033693730831146
+epoch: 1, step: 376, loss: 0.2610178291797638
+epoch: 1, step: 377, loss: 0.46564000844955444
+epoch: 1, step: 378, loss: 0.1587873101234436
+epoch: 1, step: 379, loss: 0.13126163184642792
+epoch: 1, step: 380, loss: 0.4319136142730713
+epoch: 1, step: 381, loss: 0.2850586771965027
+epoch: 1, step: 382, loss: 0.5189169645309448
+epoch: 1, step: 383, loss: 0.29344022274017334
+epoch: 1, step: 384, loss: 0.3797925114631653
+epoch: 1, step: 385, loss: 0.0315333753824234
+epoch: 1, step: 386, loss: 0.1753864884376526
+epoch: 1, step: 387, loss: 0.2762547433376312
+epoch: 1, step: 388, loss: 0.1368047595024109
+epoch: 1, step: 389, loss: 0.06348087638616562
+epoch: 1, step: 390, loss: 0.19238144159317017
+epoch: 1, step: 391, loss: 0.24099914729595184
+epoch: 1, step: 392, loss: 0.11002292484045029
+epoch: 1, step: 393, loss: 0.03531314432621002
+epoch: 1, step: 394, loss: 0.29684531688690186
+epoch: 1, step: 395, loss: 0.22530530393123627
+epoch: 1, step: 396, loss: 0.16022717952728271
+epoch: 1, step: 397, loss: 0.2761780619621277
+epoch: 1, step: 398, loss: 0.3451184630393982
+[2023-10-09 04:33:08,717] [INFO] [logging.py:96:log_dist] [Rank 0] step=210, skipped=0, lr=[3.5341757665965106e-06], mom=[(0.9, 0.95)]
+[2023-10-09 04:33:08,717] [INFO] [timer.py:215:stop] epoch=1/micro_step=400/global_step=210, RunningAvgSamplesPerSec=1.6608072338200128, CurrSamplesPerSec=1.6607413957310533, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 1, step: 399, loss: 0.31024986505508423
+epoch: 1, step: 400, loss: 0.2817157506942749
+chosen_last_scores (higher is better) : 3.6374659538269043, acc (higher is better) : 0.478137421919364
+epoch: 1, step: 401, loss: 0.14390502870082855
+epoch: 1, step: 402, loss: 0.05727241560816765
+epoch: 1, step: 403, loss: 0.2986891269683838
+epoch: 1, step: 404, loss: 0.6984843015670776
+epoch: 1, step: 405, loss: 0.3761383891105652
+epoch: 1, step: 406, loss: 0.3945213258266449
+epoch: 1, step: 407, loss: 0.4204481542110443
+epoch: 1, step: 408, loss: 0.27146828174591064
+epoch: 1, step: 409, loss: 0.27768194675445557
+epoch: 1, step: 410, loss: 0.31434446573257446
+epoch: 1, step: 411, loss: 0.24928466975688934
+epoch: 1, step: 412, loss: 0.30102941393852234
+epoch: 1, step: 413, loss: 0.24556386470794678
+epoch: 1, step: 414, loss: 0.17705923318862915
+epoch: 1, step: 415, loss: 0.40258824825286865
+epoch: 1, step: 416, loss: 0.3036888837814331
+epoch: 1, step: 417, loss: 0.24282561242580414
+epoch: 1, step: 418, loss: 0.26464712619781494
+epoch: 1, step: 419, loss: 0.3224423825740814
+epoch: 1, step: 420, loss: 0.17259781062602997
+epoch: 1, step: 421, loss: 0.021112073212862015
+epoch: 1, step: 422, loss: 0.38068708777427673
+epoch: 1, step: 423, loss: 0.2520083785057068
+epoch: 1, step: 424, loss: 0.18478509783744812
+epoch: 1, step: 425, loss: 0.023669689893722534
+epoch: 1, step: 426, loss: 0.2943498492240906
+epoch: 1, step: 427, loss: 0.06992194056510925
+epoch: 1, step: 428, loss: 0.34953317046165466
+epoch: 1, step: 429, loss: 0.1375804990530014
+epoch: 1, step: 430, loss: 0.18665644526481628
+epoch: 1, step: 431, loss: 0.1438455581665039
+epoch: 1, step: 432, loss: 0.0351971760392189
+epoch: 1, step: 433, loss: 0.3982166051864624
+epoch: 1, step: 434, loss: 0.16884103417396545
+epoch: 1, step: 435, loss: 0.3898271918296814
+epoch: 1, step: 436, loss: 0.263088196516037
+epoch: 1, step: 437, loss: 0.42792654037475586
+epoch: 1, step: 438, loss: 0.12437628209590912
+[2023-10-09 05:21:15,063] [INFO] [logging.py:96:log_dist] [Rank 0] step=220, skipped=0, lr=[3.039083400484913e-06], mom=[(0.9, 0.95)]
+[2023-10-09 05:21:15,064] [INFO] [timer.py:215:stop] epoch=1/micro_step=440/global_step=220, RunningAvgSamplesPerSec=1.6607835953162113, CurrSamplesPerSec=1.6669345148460337, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 1, step: 439, loss: 0.23893235623836517
+Epoch 2/3 with loss 0.43586393291215325
+***** Evaluating reward, Epoch 2/3 *****
+chosen_last_scores (higher is better) : 1.9836575984954834, acc (higher is better) : 0.4825
+Beginning of Epoch 3/3, Total Micro Batches 440
+epoch: 2, step: 0, loss: 0.12436825037002563
+epoch: 2, step: 1, loss: 0.2918297052383423
+epoch: 2, step: 2, loss: 0.44444823265075684
+epoch: 2, step: 3, loss: 0.2703699469566345
+epoch: 2, step: 4, loss: 0.5342280864715576
+epoch: 2, step: 5, loss: 0.3116389811038971
+epoch: 2, step: 6, loss: 0.5663708448410034
+epoch: 2, step: 7, loss: 0.011303210631012917
+epoch: 2, step: 8, loss: 0.31599336862564087
+epoch: 2, step: 9, loss: 0.030500900000333786
+epoch: 2, step: 10, loss: 0.1756506860256195
+epoch: 2, step: 11, loss: 0.26306554675102234
+epoch: 2, step: 12, loss: 0.3120361566543579
+epoch: 2, step: 13, loss: 0.05775470659136772
+epoch: 2, step: 14, loss: 0.17725566029548645
+epoch: 2, step: 15, loss: 0.4457940459251404
+epoch: 2, step: 16, loss: 0.6381984949111938
+epoch: 2, step: 17, loss: 0.47183939814567566
+epoch: 2, step: 18, loss: 0.4058428704738617
+epoch: 2, step: 19, loss: 0.20089976489543915
+epoch: 2, step: 20, loss: 0.017133643850684166
+epoch: 2, step: 21, loss: 0.560785174369812
+epoch: 2, step: 22, loss: 0.4090316891670227
+epoch: 2, step: 23, loss: 0.0957629531621933
+epoch: 2, step: 24, loss: 0.11419320106506348
+epoch: 2, step: 25, loss: 0.20508480072021484
+epoch: 2, step: 26, loss: 0.301008939743042
+epoch: 2, step: 27, loss: 0.06112339347600937
+epoch: 2, step: 28, loss: 0.44081220030784607
+epoch: 2, step: 29, loss: 0.28771042823791504
+epoch: 2, step: 30, loss: 0.019835643470287323
+epoch: 2, step: 31, loss: 0.2646474540233612
+epoch: 2, step: 32, loss: 0.20163939893245697
+epoch: 2, step: 33, loss: 0.25163495540618896
+epoch: 2, step: 34, loss: 0.4733761250972748
+epoch: 2, step: 35, loss: 0.3209998607635498
+epoch: 2, step: 36, loss: 0.04313966631889343
+epoch: 2, step: 37, loss: 0.2107962816953659
+epoch: 2, step: 38, loss: 0.1193527802824974
+[2023-10-09 05:50:55,229] [INFO] [logging.py:96:log_dist] [Rank 0] step=230, skipped=0, lr=[2.5649292736235132e-06], mom=[(0.9, 0.95)]
+[2023-10-09 05:50:55,230] [INFO] [timer.py:215:stop] epoch=2/micro_step=40/global_step=230, RunningAvgSamplesPerSec=1.6608652771889922, CurrSamplesPerSec=1.6630270651353463, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 2, step: 39, loss: 0.47139137983322144
+epoch: 2, step: 40, loss: 0.24934589862823486
+epoch: 2, step: 41, loss: 0.6077485084533691
+epoch: 2, step: 42, loss: 0.3326267600059509
+epoch: 2, step: 43, loss: 0.15502581000328064
+epoch: 2, step: 44, loss: 0.28705814480781555
+epoch: 2, step: 45, loss: 0.1743401288986206
+epoch: 2, step: 46, loss: 0.04925857484340668
+epoch: 2, step: 47, loss: 0.042648762464523315
+epoch: 2, step: 48, loss: 0.4821793735027313
+epoch: 2, step: 49, loss: 0.28745269775390625
+epoch: 2, step: 50, loss: 0.2755982279777527
+epoch: 2, step: 51, loss: 0.2694244086742401
+epoch: 2, step: 52, loss: 0.5874555110931396
+epoch: 2, step: 53, loss: 0.047712650150060654
+epoch: 2, step: 54, loss: 0.31921812891960144
+epoch: 2, step: 55, loss: 0.13824814558029175
+epoch: 2, step: 56, loss: 0.15394684672355652
+epoch: 2, step: 57, loss: 0.38430851697921753
+epoch: 2, step: 58, loss: 0.07498534023761749
+epoch: 2, step: 59, loss: 0.315517783164978
+epoch: 2, step: 60, loss: 0.14576256275177002
+epoch: 2, step: 61, loss: 0.26866984367370605
+epoch: 2, step: 62, loss: 0.5216504335403442
+epoch: 2, step: 63, loss: 0.2578074336051941
+epoch: 2, step: 64, loss: 0.13946321606636047
+epoch: 2, step: 65, loss: 0.26501038670539856
+epoch: 2, step: 66, loss: 0.44694051146507263
+epoch: 2, step: 67, loss: 0.0591391995549202
+epoch: 2, step: 68, loss: 0.4161544740200043
+epoch: 2, step: 69, loss: 0.20919549465179443
+epoch: 2, step: 70, loss: 0.3397268056869507
+epoch: 2, step: 71, loss: 0.6564584970474243
+epoch: 2, step: 72, loss: 0.4139464795589447
+epoch: 2, step: 73, loss: 0.31192880868911743
+epoch: 2, step: 74, loss: 0.38577207922935486
+epoch: 2, step: 75, loss: 0.1397564709186554
+epoch: 2, step: 76, loss: 0.2615356147289276
+epoch: 2, step: 77, loss: 0.25645625591278076
+epoch: 2, step: 78, loss: 0.31056731939315796
+[2023-10-09 06:05:21,013] [INFO] [logging.py:96:log_dist] [Rank 0] step=240, skipped=0, lr=[2.1172724096265056e-06], mom=[(0.9, 0.95)]
+[2023-10-09 06:05:21,014] [INFO] [timer.py:215:stop] epoch=2/micro_step=80/global_step=240, RunningAvgSamplesPerSec=1.6609707623582188, CurrSamplesPerSec=1.6577013656277253, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 2, step: 79, loss: 0.27624407410621643
+epoch: 2, step: 80, loss: 0.2109607309103012
+epoch: 2, step: 81, loss: 0.4165470004081726
+epoch: 2, step: 82, loss: 0.325031042098999
+epoch: 2, step: 83, loss: 0.3954576849937439
+epoch: 2, step: 84, loss: 0.15574954450130463
+epoch: 2, step: 85, loss: 0.1647748202085495
+epoch: 2, step: 86, loss: 0.30609196424484253
+epoch: 2, step: 87, loss: 0.15528321266174316
+epoch: 2, step: 88, loss: 0.37932896614074707
+epoch: 2, step: 89, loss: 0.08705904334783554
+epoch: 2, step: 90, loss: 0.2463180273771286
+epoch: 2, step: 91, loss: 0.04050026834011078
+epoch: 2, step: 92, loss: 0.3611912131309509
+epoch: 2, step: 93, loss: 0.04448169097304344
+epoch: 2, step: 94, loss: 0.05739303678274155
+epoch: 2, step: 95, loss: 0.17025655508041382
+epoch: 2, step: 96, loss: 0.42287880182266235
+epoch: 2, step: 97, loss: 0.20998750627040863
+epoch: 2, step: 98, loss: 0.14158347249031067
+epoch: 2, step: 99, loss: 0.27671828866004944
+epoch: 2, step: 100, loss: 0.04755549132823944
+epoch: 2, step: 101, loss: 0.3729655146598816
+epoch: 2, step: 102, loss: 0.2595265209674835
+epoch: 2, step: 103, loss: 0.1491319239139557
+epoch: 2, step: 104, loss: 0.14718428254127502
+epoch: 2, step: 105, loss: 0.15638667345046997
+epoch: 2, step: 106, loss: 0.41191327571868896
+epoch: 2, step: 107, loss: 0.1031646728515625
+epoch: 2, step: 108, loss: 0.14734229445457458
+epoch: 2, step: 109, loss: 0.29768794775009155
+epoch: 2, step: 110, loss: 0.3001086413860321
+epoch: 2, step: 111, loss: 0.272762656211853
+epoch: 2, step: 112, loss: 0.2769896388053894
+epoch: 2, step: 113, loss: 0.17724893987178802
+epoch: 2, step: 114, loss: 0.15103338658809662
+epoch: 2, step: 115, loss: 0.15585127472877502
+epoch: 2, step: 116, loss: 0.17009705305099487
+epoch: 2, step: 117, loss: 0.6150705814361572
+epoch: 2, step: 118, loss: 0.27913400530815125
+[2023-10-09 06:19:47,184] [INFO] [logging.py:96:log_dist] [Rank 0] step=250, skipped=0, lr=[1.7013611759276821e-06], mom=[(0.9, 0.95)]
+[2023-10-09 06:19:47,185] [INFO] [timer.py:215:stop] epoch=2/micro_step=120/global_step=250, RunningAvgSamplesPerSec=1.6610376835490024, CurrSamplesPerSec=1.6590026035731464, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 2, step: 119, loss: 0.2982333302497864
+epoch: 2, step: 120, loss: 0.2412906289100647
+epoch: 2, step: 121, loss: 0.1266060173511505
+epoch: 2, step: 122, loss: 0.1344648003578186
+epoch: 2, step: 123, loss: 0.3718354105949402
+epoch: 2, step: 124, loss: 0.1595127284526825
+epoch: 2, step: 125, loss: 0.2416778802871704
+epoch: 2, step: 126, loss: 0.4048701524734497
+epoch: 2, step: 127, loss: 0.02568379044532776
+epoch: 2, step: 128, loss: 0.16378624737262726
+epoch: 2, step: 129, loss: 0.1550968587398529
+epoch: 2, step: 130, loss: 0.4027412533760071
+epoch: 2, step: 131, loss: 0.22292783856391907
+epoch: 2, step: 132, loss: 0.2751564681529999
+epoch: 2, step: 133, loss: 0.007880324497818947
+epoch: 2, step: 134, loss: 0.13664767146110535
+epoch: 2, step: 135, loss: 0.2656201422214508
+epoch: 2, step: 136, loss: 0.216448575258255
+epoch: 2, step: 137, loss: 0.31930115818977356
+epoch: 2, step: 138, loss: 0.13054625689983368
+epoch: 2, step: 139, loss: 0.26596471667289734
+epoch: 2, step: 140, loss: 0.03551654517650604
+epoch: 2, step: 141, loss: 0.3342190384864807
+epoch: 2, step: 142, loss: 0.13763883709907532
+epoch: 2, step: 143, loss: 0.12967196106910706
+epoch: 2, step: 144, loss: 0.3055340051651001
+epoch: 2, step: 145, loss: 0.1708986759185791
+epoch: 2, step: 146, loss: 0.13929693400859833
+epoch: 2, step: 147, loss: 0.3157990574836731
+epoch: 2, step: 148, loss: 0.21251550316810608
+epoch: 2, step: 149, loss: 0.058769341558218
+epoch: 2, step: 150, loss: 0.03468780219554901
+epoch: 2, step: 151, loss: 0.4571780562400818
+epoch: 2, step: 152, loss: 0.5897371768951416
+epoch: 2, step: 153, loss: 0.05721370503306389
+epoch: 2, step: 154, loss: 0.5571044087409973
+epoch: 2, step: 155, loss: 0.20640215277671814
+epoch: 2, step: 156, loss: 0.1902848482131958
+epoch: 2, step: 157, loss: 0.3697633743286133
+epoch: 2, step: 158, loss: 0.21874825656414032
+[2023-10-09 06:34:14,414] [INFO] [logging.py:96:log_dist] [Rank 0] step=260, skipped=0, lr=[1.3220717514708948e-06], mom=[(0.9, 0.95)]
+[2023-10-09 06:34:14,414] [INFO] [timer.py:215:stop] epoch=2/micro_step=160/global_step=260, RunningAvgSamplesPerSec=1.661022220584462, CurrSamplesPerSec=1.6587427538183985, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 2, step: 159, loss: 0.5431124567985535
+epoch: 2, step: 160, loss: 0.5330280065536499
+epoch: 2, step: 161, loss: 0.1743193119764328
+epoch: 2, step: 162, loss: 0.2353035807609558
+epoch: 2, step: 163, loss: 0.5680659413337708
+epoch: 2, step: 164, loss: 0.4653453528881073
+epoch: 2, step: 165, loss: 0.0530116967856884
+epoch: 2, step: 166, loss: 0.17274539172649384
+epoch: 2, step: 167, loss: 0.20729301869869232
+epoch: 2, step: 168, loss: 0.5741705894470215
+epoch: 2, step: 169, loss: 0.30409592390060425
+epoch: 2, step: 170, loss: 0.312869668006897
+epoch: 2, step: 171, loss: 0.15061736106872559
+epoch: 2, step: 172, loss: 0.2033364623785019
+epoch: 2, step: 173, loss: 0.1214345395565033
+epoch: 2, step: 174, loss: 0.027558349072933197
+epoch: 2, step: 175, loss: 0.4520251154899597
+epoch: 2, step: 176, loss: 0.28008484840393066
+epoch: 2, step: 177, loss: 0.47433286905288696
+epoch: 2, step: 178, loss: 0.1871432512998581
+epoch: 2, step: 179, loss: 0.2704766094684601
+epoch: 2, step: 180, loss: 0.6470248103141785
+epoch: 2, step: 181, loss: 0.3186154365539551
+epoch: 2, step: 182, loss: 0.1682317554950714
+epoch: 2, step: 183, loss: 0.5676142573356628
+epoch: 2, step: 184, loss: 0.36516594886779785
+epoch: 2, step: 185, loss: 0.1906163990497589
+epoch: 2, step: 186, loss: 0.1485525667667389
+epoch: 2, step: 187, loss: 0.31534725427627563
+epoch: 2, step: 188, loss: 0.03560572862625122
+epoch: 2, step: 189, loss: 0.3848629891872406
+epoch: 2, step: 190, loss: 0.3634580075740814
+epoch: 2, step: 191, loss: 0.2423105090856552
+epoch: 2, step: 192, loss: 0.2966412901878357
+epoch: 2, step: 193, loss: 0.17478018999099731
+epoch: 2, step: 194, loss: 0.25389808416366577
+epoch: 2, step: 195, loss: 0.3184022903442383
+epoch: 2, step: 196, loss: 0.37866270542144775
+epoch: 2, step: 197, loss: 0.19110575318336487
+epoch: 2, step: 198, loss: 0.018878936767578125
+[2023-10-09 06:48:40,672] [INFO] [logging.py:96:log_dist] [Rank 0] step=270, skipped=0, lr=[9.83850957970269e-07], mom=[(0.9, 0.95)]
+[2023-10-09 06:48:40,672] [INFO] [timer.py:215:stop] epoch=2/micro_step=200/global_step=270, RunningAvgSamplesPerSec=1.6610761683955495, CurrSamplesPerSec=1.6592671341434735, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 2, step: 199, loss: 0.16394439339637756
+epoch: 2, step: 200, loss: 0.04872402176260948
+chosen_last_scores (higher is better) : 2.808504104614258, acc (higher is better) : 0.48722316865417375
+saving model ...
+epoch: 2, step: 201, loss: 0.18930983543395996
+epoch: 2, step: 202, loss: 0.3195513188838959
+epoch: 2, step: 203, loss: 0.24260777235031128
+epoch: 2, step: 204, loss: 0.1370655745267868
+epoch: 2, step: 205, loss: 0.17300903797149658
+epoch: 2, step: 206, loss: 0.2662619352340698
+epoch: 2, step: 207, loss: 0.1625767946243286
+epoch: 2, step: 208, loss: 0.4378874897956848
+epoch: 2, step: 209, loss: 0.4776035249233246
+epoch: 2, step: 210, loss: 0.20707166194915771
+epoch: 2, step: 211, loss: 0.13262030482292175
+epoch: 2, step: 212, loss: 0.24431318044662476
+epoch: 2, step: 213, loss: 0.367095410823822
+epoch: 2, step: 214, loss: 0.3002663552761078
+epoch: 2, step: 215, loss: 0.13110758364200592
+epoch: 2, step: 216, loss: 0.022366173565387726
+epoch: 2, step: 217, loss: 0.27684876322746277
+epoch: 2, step: 218, loss: 0.4893473982810974
+epoch: 2, step: 219, loss: 0.024404970929026604
+epoch: 2, step: 220, loss: 0.2307606190443039
+epoch: 2, step: 221, loss: 0.4273185133934021
+epoch: 2, step: 222, loss: 0.3962300717830658
+epoch: 2, step: 223, loss: 0.14182619750499725
+epoch: 2, step: 224, loss: 0.2256910651922226
+epoch: 2, step: 225, loss: 0.3854679465293884
+epoch: 2, step: 226, loss: 0.416206419467926
+epoch: 2, step: 227, loss: 0.03288523852825165
+epoch: 2, step: 228, loss: 0.3503490686416626
+epoch: 2, step: 229, loss: 0.43512699007987976
+epoch: 2, step: 230, loss: 0.2921750247478485
+epoch: 2, step: 231, loss: 0.2834436595439911
+epoch: 2, step: 232, loss: 0.1953275501728058
+epoch: 2, step: 233, loss: 0.8038632273674011
+epoch: 2, step: 234, loss: 0.27369487285614014
+epoch: 2, step: 235, loss: 0.27384981513023376
+epoch: 2, step: 236, loss: 0.13913722336292267
+epoch: 2, step: 237, loss: 0.2265130579471588
+epoch: 2, step: 238, loss: 0.3040923476219177
+[2023-10-09 07:37:57,451] [INFO] [logging.py:96:log_dist] [Rank 0] step=280, skipped=0, lr=[6.906641249913829e-07], mom=[(0.9, 0.95)]
+[2023-10-09 07:37:57,451] [INFO] [timer.py:215:stop] epoch=2/micro_step=240/global_step=280, RunningAvgSamplesPerSec=1.6609461166147466, CurrSamplesPerSec=1.661121473253301, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 2, step: 239, loss: 0.1990116834640503
+epoch: 2, step: 240, loss: 0.06244126707315445
+epoch: 2, step: 241, loss: 0.029965121299028397
+epoch: 2, step: 242, loss: 0.37278711795806885
+epoch: 2, step: 243, loss: 0.020717378705739975
+epoch: 2, step: 244, loss: 0.2202281802892685
+epoch: 2, step: 245, loss: 0.2862918972969055
+epoch: 2, step: 246, loss: 0.29637572169303894
+epoch: 2, step: 247, loss: 0.4607176184654236
+epoch: 2, step: 248, loss: 0.44591957330703735
+epoch: 2, step: 249, loss: 0.3113642632961273
+epoch: 2, step: 250, loss: 0.4524906277656555
+epoch: 2, step: 251, loss: 0.4925846457481384
+epoch: 2, step: 252, loss: 0.6476214528083801
+epoch: 2, step: 253, loss: 0.4691642224788666
+epoch: 2, step: 254, loss: 0.5552439093589783
+epoch: 2, step: 255, loss: 0.25897422432899475
+epoch: 2, step: 256, loss: 0.2943524718284607
+epoch: 2, step: 257, loss: 0.14323556423187256
+epoch: 2, step: 258, loss: 0.5027511119842529
+epoch: 2, step: 259, loss: 0.9588127136230469
+epoch: 2, step: 260, loss: 0.46790140867233276
+epoch: 2, step: 261, loss: 0.31126272678375244
+epoch: 2, step: 262, loss: 0.5198078155517578
+epoch: 2, step: 263, loss: 0.16027243435382843
+epoch: 2, step: 264, loss: 0.07147128880023956
+epoch: 2, step: 265, loss: 0.5712957382202148
+epoch: 2, step: 266, loss: 0.48242491483688354
+epoch: 2, step: 267, loss: 0.21653679013252258
+epoch: 2, step: 268, loss: 0.20088200271129608
+epoch: 2, step: 269, loss: 0.27053356170654297
+epoch: 2, step: 270, loss: 0.1902826726436615
+epoch: 2, step: 271, loss: 0.35433229804039
+epoch: 2, step: 272, loss: 0.0888245701789856
+epoch: 2, step: 273, loss: 0.4043048322200775
+epoch: 2, step: 274, loss: 0.23429475724697113
+epoch: 2, step: 275, loss: 0.31360727548599243
+epoch: 2, step: 276, loss: 0.3661138415336609
+epoch: 2, step: 277, loss: 0.49284157156944275
+epoch: 2, step: 278, loss: 0.3273741602897644
+[2023-10-09 07:52:22,733] [INFO] [logging.py:96:log_dist] [Rank 0] step=290, skipped=0, lr=[4.45948600087633e-07], mom=[(0.9, 0.95)]
+[2023-10-09 07:52:22,754] [INFO] [timer.py:215:stop] epoch=2/micro_step=280/global_step=290, RunningAvgSamplesPerSec=1.661062437991429, CurrSamplesPerSec=1.6635315511042148, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 2, step: 279, loss: 0.28429752588272095
+epoch: 2, step: 280, loss: 0.3353676497936249
+epoch: 2, step: 281, loss: 0.31967705488204956
+epoch: 2, step: 282, loss: 0.6081091165542603
+epoch: 2, step: 283, loss: 0.3784123361110687
+epoch: 2, step: 284, loss: 0.2986355423927307
+epoch: 2, step: 285, loss: 0.12454496324062347
+epoch: 2, step: 286, loss: 0.4774121642112732
+epoch: 2, step: 287, loss: 0.3783420920372009
+epoch: 2, step: 288, loss: 0.22193662822246552
+epoch: 2, step: 289, loss: 0.4199565052986145
+epoch: 2, step: 290, loss: 0.2984347343444824
+epoch: 2, step: 291, loss: 0.8273546099662781
+epoch: 2, step: 292, loss: 0.4252263903617859
+epoch: 2, step: 293, loss: 0.2101835310459137
+epoch: 2, step: 294, loss: 0.24311137199401855
+epoch: 2, step: 295, loss: 0.2064681053161621
+epoch: 2, step: 296, loss: 0.426829069852829
+epoch: 2, step: 297, loss: 0.43216556310653687
+epoch: 2, step: 298, loss: 0.5260090231895447
+epoch: 2, step: 299, loss: 0.5906152129173279
+epoch: 2, step: 300, loss: 0.16030411422252655
+epoch: 2, step: 301, loss: 0.3132722079753876
+epoch: 2, step: 302, loss: 0.3388363718986511
+epoch: 2, step: 303, loss: 0.655774712562561
+epoch: 2, step: 304, loss: 0.2659788131713867
+epoch: 2, step: 305, loss: 0.5443583130836487
+epoch: 2, step: 306, loss: 0.18765345215797424
+epoch: 2, step: 307, loss: 0.0861896425485611
+epoch: 2, step: 308, loss: 0.1948663890361786
+epoch: 2, step: 309, loss: 0.6107073426246643
+epoch: 2, step: 310, loss: 0.19576823711395264
+epoch: 2, step: 311, loss: 0.49431344866752625
+epoch: 2, step: 312, loss: 0.31921783089637756
+epoch: 2, step: 313, loss: 0.36482834815979004
+epoch: 2, step: 314, loss: 0.16698044538497925
+epoch: 2, step: 315, loss: 0.3915606737136841
+epoch: 2, step: 316, loss: 0.41021978855133057
+epoch: 2, step: 317, loss: 0.34005188941955566
+epoch: 2, step: 318, loss: 0.08162074536085129
+[2023-10-09 08:06:48,717] [INFO] [logging.py:96:log_dist] [Rank 0] step=300, skipped=0, lr=[2.525734490429787e-07], mom=[(0.9, 0.95)]
+[2023-10-09 08:06:48,718] [INFO] [timer.py:215:stop] epoch=2/micro_step=320/global_step=300, RunningAvgSamplesPerSec=1.6611284626599139, CurrSamplesPerSec=1.6621187831132873, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 2, step: 319, loss: 0.5079714059829712
+epoch: 2, step: 320, loss: 0.15863987803459167
+epoch: 2, step: 321, loss: 0.08365526050329208
+epoch: 2, step: 322, loss: 0.27557823061943054
+epoch: 2, step: 323, loss: 0.3265288770198822
+epoch: 2, step: 324, loss: 0.25141799449920654
+epoch: 2, step: 325, loss: 0.2127271145582199
+epoch: 2, step: 326, loss: 0.22718414664268494
+epoch: 2, step: 327, loss: 0.0763482078909874
+epoch: 2, step: 328, loss: 0.30564606189727783
+epoch: 2, step: 329, loss: 0.42703673243522644
+epoch: 2, step: 330, loss: 0.2252967655658722
+epoch: 2, step: 331, loss: 0.21965408325195312
+epoch: 2, step: 332, loss: 0.2734615206718445
+epoch: 2, step: 333, loss: 0.13662299513816833
+epoch: 2, step: 334, loss: 0.5619797706604004
+epoch: 2, step: 335, loss: 0.3920360803604126
+epoch: 2, step: 336, loss: 0.08126382529735565
+epoch: 2, step: 337, loss: 0.19033542275428772
+epoch: 2, step: 338, loss: 0.44861310720443726
+epoch: 2, step: 339, loss: 0.18791675567626953
+epoch: 2, step: 340, loss: 0.15903624892234802
+epoch: 2, step: 341, loss: 0.3435543477535248
+epoch: 2, step: 342, loss: 0.17183297872543335
+epoch: 2, step: 343, loss: 0.36990106105804443
+epoch: 2, step: 344, loss: 0.3851165771484375
+epoch: 2, step: 345, loss: 0.20830248296260834
+epoch: 2, step: 346, loss: 0.29401296377182007
+epoch: 2, step: 347, loss: 0.03702957555651665
+epoch: 2, step: 348, loss: 0.6033707857131958
+epoch: 2, step: 349, loss: 0.18602663278579712
+epoch: 2, step: 350, loss: 0.41059610247612
+epoch: 2, step: 351, loss: 0.20400875806808472
+epoch: 2, step: 352, loss: 0.1626722812652588
+epoch: 2, step: 353, loss: 0.0487794503569603
+epoch: 2, step: 354, loss: 0.27327609062194824
+epoch: 2, step: 355, loss: 0.42017099261283875
+epoch: 2, step: 356, loss: 0.05944292992353439
+epoch: 2, step: 357, loss: 0.17407318949699402
+epoch: 2, step: 358, loss: 0.48831936717033386
+[2023-10-09 08:21:14,411] [INFO] [logging.py:96:log_dist] [Rank 0] step=310, skipped=0, lr=[1.1280581869883189e-07], mom=[(0.9, 0.95)]
+[2023-10-09 08:21:14,411] [INFO] [timer.py:215:stop] epoch=2/micro_step=360/global_step=310, RunningAvgSamplesPerSec=1.6612084938873677, CurrSamplesPerSec=1.667209105607321, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 2, step: 359, loss: 0.20454487204551697
+epoch: 2, step: 360, loss: 0.1753484010696411
+epoch: 2, step: 361, loss: 0.04987357556819916
+epoch: 2, step: 362, loss: 0.37847471237182617
+epoch: 2, step: 363, loss: 0.28932344913482666
+epoch: 2, step: 364, loss: 0.18959395587444305
+epoch: 2, step: 365, loss: 0.13820090889930725
+epoch: 2, step: 366, loss: 0.1836290806531906
+epoch: 2, step: 367, loss: 0.6917218565940857
+epoch: 2, step: 368, loss: 0.06835861504077911
+epoch: 2, step: 369, loss: 0.3147035241127014
+epoch: 2, step: 370, loss: 0.2604643702507019
+epoch: 2, step: 371, loss: 0.5056253671646118
+epoch: 2, step: 372, loss: 0.04200058802962303
+epoch: 2, step: 373, loss: 0.045407455414533615
+epoch: 2, step: 374, loss: 0.2881814241409302
+epoch: 2, step: 375, loss: 0.31010204553604126
+epoch: 2, step: 376, loss: 0.058839183300733566
+epoch: 2, step: 377, loss: 0.3292851448059082
+epoch: 2, step: 378, loss: 0.04199222847819328
+epoch: 2, step: 379, loss: 0.056876979768276215
+epoch: 2, step: 380, loss: 0.426076740026474
+epoch: 2, step: 381, loss: 0.27719491720199585
+epoch: 2, step: 382, loss: 0.5379692912101746
+epoch: 2, step: 383, loss: 0.300352543592453
+epoch: 2, step: 384, loss: 0.4561442732810974
+epoch: 2, step: 385, loss: 0.08686002343893051
+epoch: 2, step: 386, loss: 0.21967057883739471
+epoch: 2, step: 387, loss: 0.34036120772361755
+epoch: 2, step: 388, loss: 0.18042495846748352
+epoch: 2, step: 389, loss: 0.04606699198484421
+epoch: 2, step: 390, loss: 0.17600253224372864
+epoch: 2, step: 391, loss: 0.25390034914016724
+epoch: 2, step: 392, loss: 0.0609578900039196
+epoch: 2, step: 393, loss: 0.04177051782608032
+epoch: 2, step: 394, loss: 0.31401321291923523
+epoch: 2, step: 395, loss: 0.2500898540019989
+epoch: 2, step: 396, loss: 0.12700346112251282
+epoch: 2, step: 397, loss: 0.2858659625053406
+epoch: 2, step: 398, loss: 0.29098114371299744
+[2023-10-09 08:35:41,043] [INFO] [logging.py:96:log_dist] [Rank 0] step=320, skipped=0, lr=[2.8284356730214946e-08], mom=[(0.9, 0.95)]
+[2023-10-09 08:35:41,043] [INFO] [timer.py:215:stop] epoch=2/micro_step=400/global_step=320, RunningAvgSamplesPerSec=1.6612256607502958, CurrSamplesPerSec=1.663031218352217, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 2, step: 399, loss: 0.20274510979652405
+epoch: 2, step: 400, loss: 0.26354318857192993
+chosen_last_scores (higher is better) : 2.2528493404388428, acc (higher is better) : 0.4906303236797274
+saving model ...
+epoch: 2, step: 401, loss: 0.1405256986618042
+epoch: 2, step: 402, loss: 0.07242626696825027
+epoch: 2, step: 403, loss: 0.26397740840911865
+epoch: 2, step: 404, loss: 0.6944024562835693
+epoch: 2, step: 405, loss: 0.4223281741142273
+epoch: 2, step: 406, loss: 0.40237802267074585
+epoch: 2, step: 407, loss: 0.41322195529937744
+epoch: 2, step: 408, loss: 0.31040868163108826
+epoch: 2, step: 409, loss: 0.2964630126953125
+epoch: 2, step: 410, loss: 0.2678997218608856
+epoch: 2, step: 411, loss: 0.31295135617256165
+epoch: 2, step: 412, loss: 0.4467040002346039
+epoch: 2, step: 413, loss: 0.19012878835201263
+epoch: 2, step: 414, loss: 0.16797778010368347
+epoch: 2, step: 415, loss: 0.49136561155319214
+epoch: 2, step: 416, loss: 0.3159765601158142
+epoch: 2, step: 417, loss: 0.27032238245010376
+epoch: 2, step: 418, loss: 0.26207947731018066
+epoch: 2, step: 419, loss: 0.3320279121398926
+epoch: 2, step: 420, loss: 0.19692721962928772
+epoch: 2, step: 421, loss: 0.026194363832473755
+epoch: 2, step: 422, loss: 0.4057735800743103
+epoch: 2, step: 423, loss: 0.27777230739593506
+epoch: 2, step: 424, loss: 0.1816011667251587
+epoch: 2, step: 425, loss: 0.050479792058467865
+epoch: 2, step: 426, loss: 0.3739355504512787
+epoch: 2, step: 427, loss: 0.059667907655239105
+epoch: 2, step: 428, loss: 0.413499116897583
+epoch: 2, step: 429, loss: 0.16719761490821838
+epoch: 2, step: 430, loss: 0.19846439361572266
+epoch: 2, step: 431, loss: 0.17009031772613525
+epoch: 2, step: 432, loss: 0.04608453810214996
+epoch: 2, step: 433, loss: 0.45044511556625366
+epoch: 2, step: 434, loss: 0.1407890021800995
+epoch: 2, step: 435, loss: 0.4350918233394623
+epoch: 2, step: 436, loss: 0.28122931718826294
+epoch: 2, step: 437, loss: 0.4884084463119507
+epoch: 2, step: 438, loss: 0.15541450679302216
+[2023-10-09 09:24:58,389] [INFO] [logging.py:96:log_dist] [Rank 0] step=330, skipped=0, lr=[0.0], mom=[(0.9, 0.95)]
+[2023-10-09 09:24:58,389] [INFO] [timer.py:215:stop] epoch=2/micro_step=440/global_step=330, RunningAvgSamplesPerSec=1.661172306499814, CurrSamplesPerSec=1.6651463913256752, MemAllocated=22.52GB, MaxMemAllocated=40.01GB
+epoch: 2, step: 439, loss: 0.3798065185546875
+Epoch 3/3 with loss 0.27659697055139326
+***** Evaluating reward, Epoch 3/3 *****
+chosen_last_scores (higher is better) : 2.284541606903076, acc (higher is better) : 0.5
+saving model ...
+[2023-10-09 09:40:51,259] [INFO] [launch.py:347:main] Process 1791996 exits successfully.
+[2023-10-09 09:40:51,260] [INFO] [launch.py:347:main] Process 1791997 exits successfully.
+[2023-10-09 09:40:51,261] [INFO] [launch.py:347:main] Process 1792000 exits successfully.
+[2023-10-09 09:40:51,261] [INFO] [launch.py:347:main] Process 1791998 exits successfully.
+[2023-10-09 09:40:51,261] [INFO] [launch.py:347:main] Process 1791999 exits successfully.
+[2023-10-09 09:41:24,298] [INFO] [launch.py:347:main] Process 1791995 exits successfully.

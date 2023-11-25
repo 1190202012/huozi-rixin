@@ -1,0 +1,268 @@
+# Project
+mode: demo
+
+seed: 42
+
+# Dataset or file
+data: 
+test_file: 
+
+# Cache dir. Cache will be load from: cache_dir + load_{result, info}_file if set.
+cache_dir: 
+
+# Output dir. Output will be saved into "output_dir/%Y_%m_%d_%H_%M_%S" if set.
+output_dir: 
+
+result_file: 
+result_info_file: 
+
+# 48g gpu id
+gpu: 0, 1
+
+ddp: False
+
+# LLM Config
+LLMConfig:
+  llm1:
+    model_name: llama2_base_reward_model
+    model_path: ./data/model/llama2_base_reward_model/pytorch_model.bin
+    model_class: LlamaModel
+    fp16: True
+    tokenizer_class: LlamaTokenizer
+  llm2:
+    model_name: llama2-chat
+    model_path: daryl149/llama-2-7b-chat-hf
+    model_class: LlamaForCausalLM
+    fp16: True
+    tokenizer_class: LlamaTokenizer
+    padding_side: left
+  llm3:
+    model_name: xverse-chat
+    model_path: xverse/XVERSE-13B-Chat
+    model_class: AutoModelForCausalLM
+    fp16: True
+    tokenizer_class: AutoTokenizer
+  llm4:
+    model_name: xverse_base_reward_model
+    model_path: ./data/model/xverse_base_reward_model/pytorch_model.bin
+    model_class: LlamaModel
+    fp16: True
+    tokenizer_class: AutoTokenizer
+  llm5:
+    model_name: en_query_encoder
+    model_path: ./data/model/webglm_dual_encoder/query_encoder
+    model_class: AutoModel
+    fp16: False
+    tokenizer_path: facebook/contriever-msmarco
+    tokenizer_class: AutoTokenizer
+  llm6:
+    model_name: en_paragraph_encoder
+    model_path: ./data/model/webglm_dual_encoder/paragraph_encoder
+    model_class: AutoModel
+    fp16: False
+    tokenizer_path: facebook/contriever-msmarco
+    tokenizer_class: AutoTokenizer
+  llm7:
+    model_name: chatglm2
+    model_path: THUDM/chatglm2-6b
+    model_class: AutoModel
+    fp16: True
+    tokenizer_class: AutoTokenizer
+    padding_side: left
+  llm8:
+    model_name: bert-base-chinese
+    model_path: bert-base-chinese
+    model_class: BertModel
+    fp16: False
+    tokenizer_class: AutoTokenizer
+  llm9:
+    model_name: deberta
+    model_path: microsoft/deberta-xlarge-mnli
+    model_class: AutoModel
+    fp16: False
+    tokenizer_class: AutoTokenizer
+  llm10:
+    model_name: zh_encoder
+    model_path: BAAI/bge-large-zh
+    model_class: AutoModel
+    fp16: False
+    tokenizer_class: AutoTokenizer
+  llm11:
+    model_name: huozi-rlhf
+    model_path: HIT-SCIR/huozi-7b-rlhf
+    model_class: AutoModelForCausalLM
+    fp16: True
+    tokenizer_class: AutoTokenizer
+    padding_side: left
+
+# Map llm with gpu device and process
+LLMMap: 
+  gpu0: huozi-rlhf, llama2_base_reward_model, xverse_base_reward_model, en_query_encoder, en_paragraph_encoder, zh_encoder
+  gpu1: huozi-rlhf, chatglm2, llama2-chat, bert-base-chinese, deberta
+
+# Modules
+Module:
+  Retrieval: Wiki, Web, Gendoc
+  Knowledge: Summarizer, Contriver
+  Response: Generator
+  Evaluate: Voter, Scorer
+
+# Method config
+ModuleConfig:
+  Web:
+    ban: False
+    load_result_file: 
+    save_result_file:
+    load_info_file: 
+    save_info_file: 
+    log_detail: True
+    ssl_verify: False
+    min_doc_len: 50
+    max_doc_len: 1000
+
+
+  Wiki:
+    ban: False
+    load_result_file: 
+    save_result_file:
+    load_info_file: 
+    save_info_file: 
+    log_detail: False
+    tokenize_kwargs:
+      padding: "longest"
+      truncation: True
+      max_length: 128
+    encode_kwargs:
+      batch_size: 1
+      pooling_method: cls
+
+
+  Gendoc:
+    ban: False
+    load_result_file: 
+    save_result_file:
+    load_info_file: 
+    save_info_file: 
+    log_detail: False
+    zh_model_name: chatglm2
+    zh_template_id: 1
+    en_model_name: llama2-chat
+    en_template_id: 4
+    tokenize_kwargs:
+      padding: False
+      truncation: True
+    generate_kwargs:
+      batch_size: 1
+      temperature: 0.4
+      top_p: 0.9
+      top_k: 50
+      repetition_penalty: 1.1
+      do_sample: True
+
+
+  Summarizer:
+    ban: False
+    load_result_file: 
+    save_result_file:
+    load_info_file: 
+    save_info_file: 
+    zh_model_name: chatglm2
+    zh_template_id: 4
+    en_model_name: llama2-chat
+    en_template_id: 4
+    tokenize_kwargs:
+      padding: "longest"
+      truncation: True
+    generate_kwargs:
+      batch_size: 2
+      temperature: 0.4
+      top_p: 0.9
+      top_k: 50
+      repetition_penalty: 1.1
+      do_sample: False
+
+
+  Contriver:
+    ban: False
+    load_result_file: 
+    save_result_file:
+    load_info_file: 
+    save_info_file: 
+    min_knowledge_len: 300
+    tokenize_kwargs:
+      padding: "longest"
+      truncation: True
+      max_length: 512
+    encode_kwargs:
+      batch_size: 1
+      pooling_method: mean
+
+
+  Generator:
+    ban: False
+    load_result_file: 
+    save_result_file:
+    load_info_file: 
+    save_info_file: 
+    zh_model_name: huozi-rlhf
+    zh_template_id: 3
+    zh_query_only_template_id: 4
+    en_model_name: huozi-rlhf
+    en_template_id: 3
+    en_query_only_template_id: 4
+    tokenize_kwargs:
+      padding: "longest"
+      truncation: True
+    generate_kwargs:
+      batch_size: 2
+      temperature: 0.4
+      top_p: 0.9
+      top_k: 30
+      repetition_penalty: 1.2
+      do_sample: False
+      max_new_tokens: 300
+
+
+  Voter: #default module for voting, DO NOT change the module name
+    ban: False
+    type: Voter
+    load_result_file: 
+    save_result_file: 
+    load_info_file: 
+    save_info_file: 
+    scoring_method: bertscore #one of nli, bertscore, rarebertscore, em, f1, nli_with_query or composition. Default is nli
+    bidirectional: # if True, will use (score(s_i, s_j) + score(s_j. s_i))/2 for similarity score, this is only applicable for asymmetric similarity score: [nli, nli_with_query, em] 
+      nli: True
+      nli_with_query: True
+      em: True
+    composition_weight: [1, 1, 1, 1, 1, 1] # if voting method is weight, final score with be the weighted sum, weight is given by the normlized composition weight. each number is the weight of "nli","bertscore","rarebertscore","em","f1","nli_with_query"
+    threshold: 0 # threshold to filter out answer, default is 0.5
+    pooling_method: topk # should be one of max, mean, topk, voting or majority voting, default is max
+    pooling_threshold: # threshold to filter out unsimilar answers in pooling methods
+    min_acceptance_num:  2 #when pooling_method is voting, only answer with more than 'min_accepatance_num' similar answers which similarity score > threshold will be kept. if None, min_acceptance_num will be set to math.ceil(num/2)
+    mean_pooling_topk: 3 #if pooling method is topk, will only take the average of the top 'mean_pooling_topk' number of scores, default is math.ceil(num/2)
+    batch_size: 512
+    hierarchical_voting: 
+      turn_on: True # if True and 'num_responses_per_prompt' in response modules is bigger than 1, then voting module will firstly vote within each query_knowledge pair(because each query-knowledge pair have more than 1 responses), then voting within each query, if False, will directly vote within each query.
+      pooling_method: majority_voting
+      pooling_threshold: 
+      min_acceptance_num:  2
+      mean_pooling_topk:
+
+
+  Scorer:
+    ban: False
+    load_result_file:
+    save_result_file: 
+    load_info_file:
+    save_info_file: 
+    zh_model_name: xverse_base_reward_model
+    zh_template_id: 1
+    en_model_name: llama2_base_reward_model
+    en_template_id: 1
+    tokenize_kwargs: 
+      padding: "longest"
+      truncation: True
+      max_length: 1024
+    reward_kwargs:
+      batch_size: 2

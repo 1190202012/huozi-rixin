@@ -1,0 +1,247 @@
+# Project
+mode: base
+
+seed: 42
+
+# Dataset or file
+# data: truthfulqa
+# test_file: ./data/datasets/{data}/{data}.jsonl
+test_file: ./data/examples/test1.json
+
+# Cache dir. Cache will be load from: cache_dir + load_{result, info}_file.
+# cache_dir: ./output/eval/{data}/best/
+
+# If cache_dir or load_{result, info}_file is None, no cache will be load.
+cache_dir: ./output/dev/2023-08-30-09-42-43/
+
+# Output dir. Output will be saved into: output_dir + "%Y_%m_%d_%H_%M_%S" + save_{result, info}_file
+# output_dir: ./output/experiment/
+output_dir: ./output/dev/
+
+result_file: result.json
+result_info_file: result_info.json
+
+# gpu id
+gpu: 0
+
+ddp: False
+
+# LLM Config
+LLMConfig:
+  llm1:
+    model_name: llama2_base_reward_model
+    model_path: ./data/model/llama2_base_reward_model/pytorch_model.bin
+    model_class: LlamaModel
+    fp16: True
+    tokenizer_class: LlamaTokenizer
+  llm2:
+    model_name: llama2-chat
+    model_path: daryl149/llama-2-7b-chat-hf
+    model_class: LlamaForCausalLM
+    fp16: True
+    tokenizer_class: LlamaTokenizer
+  llm3:
+    model_name: xverse-chat
+    model_path: xverse/XVERSE-13B-Chat
+    model_class: AutoModelForCausalLM
+    fp16: True
+    tokenizer_class: AutoTokenizer
+  llm4:
+    model_name: xverse_base_reward_model
+    model_path: ./data/model/xverse_base_reward_model/pytorch_model.bin
+    model_class: LlamaModel
+    fp16: True
+    tokenizer_class: AutoTokenizer
+  llm5:
+    model_name: en_query_encoder
+    model_path: ./data/model/webglm_dual_encoder/query_encoder
+    model_class: AutoModel
+    fp16: False
+    tokenizer_path: facebook/contriever-msmarco
+    tokenizer_class: AutoTokenizer
+  llm6:
+    model_name: en_paragraph_encoder
+    model_path: ./data/model/webglm_dual_encoder/paragraph_encoder
+    model_class: AutoModel
+    fp16: False
+    tokenizer_path: facebook/contriever-msmarco
+    tokenizer_class: AutoTokenizer
+  llm7:
+    model_name: chatglm2
+    model_path: THUDM/chatglm2-6b
+    model_class: AutoModel
+    fp16: True
+    tokenizer_class: AutoTokenizer
+  llm8:
+    model_name: bert-base-chinese
+    model_path: bert-base-chinese
+    model_class: BertModel
+    fp16: False
+    tokenizer_class: AutoTokenizer
+  llm9:
+    model_name: deberta
+    model_path: microsoft/deberta-xlarge-mnli
+    model_class: AutoModel
+    fp16: False
+    tokenizer_class: AutoTokenizer
+  llm10:
+    model_name: zh_encoder
+    model_path: BAAI/bge-large-zh
+    model_class: AutoModel
+    fp16: False
+    tokenizer_class: AutoTokenizer
+
+# Will initial and release after usage. 
+LLMMap: 
+  gpu0: 
+  gpu1:
+  gpu2:
+  gpu3:
+
+# Modules
+Module:
+  Retrieval: Wiki, Web, Gendoc
+  Knowledge: Summarizer, Contriver
+  Response: Generator
+  Evaluate: Voter, Scorer
+
+# Method config
+ModuleConfig:
+  Web:
+    ban: False
+    load_result_file: web_doc.json
+    save_result_file: web_doc.json
+    load_info_file: web_info.json
+    save_info_file: web_info.json
+    log_detail: False
+    ssl_verify: False
+    min_doc_len: 50
+    max_doc_len: 1000
+
+
+  Wiki:
+    ban: False
+    load_result_file: wiki_doc.json
+    save_result_file: wiki_doc.json
+    load_info_file: wiki_info.json
+    save_info_file: wiki_info.json
+    log_detail: False
+    tokenize_kwargs:
+      padding: "longest"
+      truncation: True
+      max_length: 128
+    encode_kwargs:
+      batch_size: 1
+      pooling_method: cls
+
+  Gendoc:
+    ban: False
+    load_result_file: gen_doc.json
+    save_result_file: gen_doc.json
+    load_info_file: gendoc_info.json
+    save_info_file: gendoc_info.json
+    log_detail: False
+    zh_model_name: chatglm2
+    zh_template_id: 1
+    en_model_name: llama2-chat
+    en_template_id: 1
+    tokenize_kwargs:
+      padding: "longest"
+      truncation: True
+    generate_kwargs:
+      batch_size: 8
+      temperature: 0.7
+      top_p: 0.8
+      top_k: 50
+      repetition_penalty: 1.3
+      do_sample: False
+
+
+  Summarizer:
+    ban: False
+    load_result_file: summarize_result.json
+    save_result_file: summarize_result.json
+    load_info_file: summarize_info.json
+    save_info_file: summarize_info.json
+    zh_model_name: chatglm2
+    zh_template_id: 4
+    en_model_name: llama2-chat
+    en_template_id: 4
+    tokenize_kwargs:
+      padding: "longest"
+      truncation: True
+    generate_kwargs:
+      batch_size: 16
+      temperature: 0.8
+      top_p: 0.9
+      top_k: 50
+      repetition_penalty: 1.2
+      do_sample: False
+
+
+  Contriver:
+    ban: False
+    load_result_file: contrive_result.json
+    save_result_file: contrive_result.json
+    load_info_file: contrive_info.json
+    save_info_file: contrive_info.json
+    min_knowledge_len: 300
+    tokenize_kwargs:
+      padding: "longest"
+      truncation: True
+      max_length: 512
+    encode_kwargs:
+      batch_size: 8
+      pooling_method: mean
+
+
+  Generator:
+    ban: False
+    load_result_file: 
+    save_result_file: response_result.json
+    load_info_file: 
+    save_info_file: response_info.json
+    zh_model_name: chatglm2
+    zh_template_id: 2
+    en_model_name: llama2-chat
+    en_template_id: 3
+    tokenize_kwargs:
+      padding: "longest"
+      truncation: True
+    generate_kwargs:
+      batch_size: 8
+      temperature: 0.8
+      top_p: 0.9
+      top_k: 50
+      repetition_penalty: 1.2
+      do_sample: False
+      max_new_tokens: 300
+
+
+  Voter:
+    ban: False
+    load_result_file: 
+    save_result_file: vote_result.json
+    load_info_file: 
+    save_info_file: vote_info.json
+    tokenize_kwargs: 
+      padding: "longest"
+      truncation: False
+    encode_kwargs:
+      batch_size: 4
+
+  Scorer:
+    ban: False
+    load_result_file: 
+    save_result_file: score_result.json
+    load_info_file: 
+    save_info_file: score_info.json
+    zh_model_name: xverse_base_reward_model
+    zh_template_id: 1
+    en_model_name: llama2_base_reward_model
+    en_template_id: 1
+    tokenize_kwargs: 
+      padding: "longest"
+      truncation: False
+    reward_kwargs:
+      batch_size: 8

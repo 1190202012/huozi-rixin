@@ -1,0 +1,8 @@
+{
+    "load_time_usage": 0.02296924591064453,
+    "retrieval_time_usage": 6.259828329086304,
+    "knowledge_time_usage": 5.095110177993774,
+    "response_time_usage": 2.4569666385650635,
+    "vote_time_usage": 24.625508069992065,
+    "score_time_usage": 370.297865152359
+}
